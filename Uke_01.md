@@ -1,12 +1,29 @@
 <style>
+
+table{
+    color: white;
+}
+
+#main{
+    color: white;
+    margin-left: 30;
+    margin-right: 30;
+}
+
+#body{
+    background-color: #2e2d2d;
+}
+
 #oppgaveBoks{
     border:1px; border-style:solid; border-color:#FFFFFF; padding: 1em; margin: 2em; border-radius: 10px;
 }
+
 #oppgaveTittel{
     font-size: 30px;
     margin-bottom: 20px;
     text-align: center;
 }
+
 #sporsmal{
     border:1px; border-style:solid; border-color:#FFFFFF; padding: 1em; background-color:#4a4a4a; font-size:18px; border-radius: 10px;
     margin-top: 20px; margin-bottom: 20px;
@@ -23,6 +40,10 @@
     margin-bottom: 20px;
 }
 </style>
+
+<div id="body">
+
+<div id="main">
 
 
 <h1 style="text-align: center; font-size: 42px;">Uke 1</h1>
@@ -231,7 +252,6 @@ Hvis det ikke går, prøv
 <h3 style="text-align: center;"> Start top i kommandolinjen og forklar hva du ser. Beskriv hvordan top er delt opp i to visuelle deler. Beskriv hva de to forskjellige delene viser og nevn de to datafeltene du mener er mest interessant i den øverste delen. For en forklaring av alle feltene, se "man top". Prøv å taste "1" i top. Hva skjer og hvilken ekstra info får du nå? (tast "1" på nytt for å gå tilbake til slik det var)</h3>
 </div>
 <div id="outerSvar">
-
 <div id="innerEnkelSvar">
 
 <p>
@@ -250,7 +270,6 @@ Når en trykker på "1" så vises oversikt over ressursbruk per CPU-kjerne, i st
 <h3 style="text-align: center;">Top har flere "hotkeys" av typen "1" som man kan bruke til å forandre hva som vises. Prøv å taste "U" i top og så ditt eget brukernavn og se hva som skjer. Ser du noe gevinst med å bruke top på denne måten? Gi eksempel på situasjoner hvor dette kan være nyttig.</h3>
 </div>
 <div id="outerSvar">
-
 <div id="innerEnkelSvar">
 
 <p>
@@ -258,5 +277,13 @@ Når en trykker på "1" så vises oversikt over ressursbruk per CPU-kjerne, i st
 </p>
 
 </div>
+</div>
+</div>
+
+
+
+
+
+
 </div>
 </div>
