@@ -65,9 +65,7 @@ F(A,B) = A
 
 ### **11.  Gå til hjemmekatlogen din. Gå deretter til katalogen /usr/bin ved å bruke relativ path.**
 
-* cd ~\
-* ln -s /usr/bin mbin
-* cd mbin
+* cd ../../usr/bin
 ---
 
 ### **12. Lag to filer med følgende innhold og kjør kommandoen diff**
