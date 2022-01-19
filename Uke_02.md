@@ -93,7 +93,7 @@ s194@os694:~/tmp$ diff fa.txt fb.txt
 ---
 > 4b
 ```
-4c4 betyr linje 4, column 4, det er der forskjellen er.
+4c4 betyr linje 4 fa, c for change, og linje 4 i fb, det er der forskjellen er.
 < 4a betyr at venstre fil(fa.txt) innholder dette, og omvendt.
 
 ---
