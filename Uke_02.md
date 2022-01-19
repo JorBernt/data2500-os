@@ -123,6 +123,7 @@ s194@os694:~/tmp$ tree
 1. cd ~
 2. cd home/s194/
 3. cd
+4. cd $HOME
 
 ---
 
