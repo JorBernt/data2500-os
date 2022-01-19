@@ -132,6 +132,12 @@ echo skriver ut meldingen i terminalen igjen, med med redirection sendes de til 
 
 ### **26. Lag først en fil fil.txt. Utfør en Linux-kommando som setter filrettighetene for filen fil.txt slik at eieren av filen (du) har alle rettigheter, medlemmer av filens gruppe har alle rettigheter untatt å skrive til filen, og alle andre kun kan lese den.**
 
+chmod 754 fil.txt
+
+---
+
+### **28. Hva blir rettighetene til en ny fil du lager med touch? Blir rettighetene de samme om du bruker en editor til å lage en ny fil? Bruk kommandoen umask til å sørge for at nye filer som lages kun kan leses og skrives til av eieren, mens alle andre ikke får noen rettigheter.**
+
 Med touch har filen har 664 rettigheter. Det samme med VIM og jed.
 umask 100 gir skrive-/leserettigheter til eier, og ingen til resten.
 
