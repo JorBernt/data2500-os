@@ -148,7 +148,7 @@ chmod 754 fil.txt
 ### **28. Hva blir rettighetene til en ny fil du lager med touch? Blir rettighetene de samme om du bruker en editor til å lage en ny fil? Bruk kommandoen umask til å sørge for at nye filer som lages kun kan leses og skrives til av eieren, mens alle andre ikke får noen rettigheter.**
 
 Med touch har filen har 664 rettigheter. Det samme med VIM og jed.
-umask 100 gir skrive-/leserettigheter til eier, og ingen til resten.
+umask 177 gir skrive-/leserettigheter til eier, og ingen til resten.
 
 ---
 # Ukens skrekk!
