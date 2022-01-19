@@ -48,6 +48,13 @@ F(A,B) = A
 
 ---
 
+### **6. Sett sammen tre slike FullAdder-makroer til en krets som du kan bruke til å utføre summen 3+7=10.**
+
+<p align="center">
+    <img src="images\uke2_oppgave6.png" style="width: auto;" alt="">
+</p>
+---
+
 ### **10. Gå til katalogen /usr/bin ved å bruke absolutt path.**
 
  cd /usr/bin
@@ -140,4 +147,21 @@ chmod 754 fil.txt
 
 Med touch har filen har 664 rettigheter. Det samme med VIM og jed.
 umask 100 gir skrive-/leserettigheter til eier, og ingen til resten.
+
+---
+# Ukens skrekk!
+
+### **29.**
+
+Man kommer seg ut ved å bruke sudo chmod 755
+Man mister rettigheten til å execute noen form for kommando som eier av mappen. For å komme seg ut må man kjøre kommandoer som root.
+
+---
+
+### **30. Start jed og lagre en fil med navn #fil.txt. Gå ut av jed og prøv å fjerne filen. Hva tror du problemet skyldes? Hvordan kan du fjerne den fra kommandolinjen?**
+
+Det går jo helt fint?
+
+---
+
 
