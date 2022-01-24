@@ -1,9 +1,9 @@
-# Uke 2
+# Uke 3
 
 ### **1. Utfør addisjonen 5 + 5 = 10 med binære tall for hånd ved å bruke den samme addisjonsmetoden som man bruker når man legger sammen desimaltall med penn og papir.**
 
 <p align="center">
-    <img src="images\uke2_oppgave1.png" style="width: auto;" alt="">
+    <img src="images\uke3_oppgave1.png" style="width: auto;" alt="">
 </p>
 
 ---
@@ -54,7 +54,7 @@ F(A,B) = A
 ### **6. Sett sammen tre slike FullAdder-makroer til en krets som du kan bruke til å utføre summen 3+7=10.**
 
 <p align="center">
-    <img src="images\uke2_oppgave6.png" style="width: auto;" alt="">
+    <img src="images\uke3_oppgave6.png" style="width: auto;" alt="">
 </p>
 ---
 
@@ -162,7 +162,8 @@ Man mister rettigheten til å execute noen form for kommando som eier av mappen.
 
 ### **30. Start jed og lagre en fil med navn #fil.txt. Gå ut av jed og prøv å fjerne filen. Hva tror du problemet skyldes? Hvordan kan du fjerne den fra kommandolinjen?**
 
-Det går jo helt fint?
+Man må bruke \ eller '' rundt filnavnt for å kunne slette.
+'#' er starten på en kommentar.
 
 ---
 
