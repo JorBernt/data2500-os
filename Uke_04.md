@@ -26,6 +26,8 @@ Det er en D-lås (data) krets. Verdien som kommer inn gjennom A kan lagres. Den 
 <p align="center">
     <img src="images\4bitalu_4bitreg.png" style="width: auto;" alt="">
 </p>
+<br>
+Klokken sin funksjon er å synkronisere D-låsene i 4bit registeret. 
 
 ---
 
