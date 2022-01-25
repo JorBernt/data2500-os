@@ -391,6 +391,81 @@ find / -name "passwd" 2>/dev/null
 <br>
 <br>
 
+## **30. Ukens utfordring nr. 1: Lag et script err.sh som skriver strengen "hallo" til stdout og strengen "Error!" til stdout. Kjør deretter scriptet slik at "hallo" skrives ut mens "Error!" omdirigeres til filen err.txt.**
+
+```bash
+#! /bin/bash
+
+echo "hallo"
+echo "Error!" >err.txt
+```
+---
+
+<br>
+<br>
+
+## **31.Lag en kommando på data2500 som teller antall ganger navnet haugerud forekommer i filen /etc/group og legger tallet i filen hgroup.txt.**
+
+```bash
+grep -c haugerud /etc/group>haugerud.txt
+```
+
+---
+<br>
+<br>
+
+## **32.Splitt opp følgende eksempel, utfør ledd for ledd (først ps aux, så awk '{print $1}', så ps -eo user | sort, etc.) og forklar hva hver kommando gjør:**
+
+```bash
+ps aux | awk '{print $1}' | sort | uniq | wc -l**
+```
+
+## **(Forøvrig er ps -eo user et alternativ til ps aux | awk '{print $1}' ) Kommandoen skal gi antall brukere som kjører prosesser på maskinen, men gir en for mye fordi det står en linje med USER øverst i ps aux listingen. Prøv å fjerne linjen som inneholder USER med grep, les manualsiden for grep.**
+
+```bash
+ps aux
+```
+Lister opp alle prosesser
+```bash
+awk '{print $1}'
+```
+Viser kun rad 1 (alle brukere)
+```bash
+sort
+```
+Sorterer brukerene
+```bash
+uniq
+```
+Fjerner alle repeterende brukernavn
+```bash
+wc -l
+```
+Teller antall linjer, AKA alle unike brukere som har prosesser kjørende.
+
+Om en skal bruke 
+```bash
+ps -eo user
+```
+kan en gjøre slik:
+```bash
+ps -ei user | grep -v USER
+```
+for å fjerne den øverte USER kolonnenavnet. (-v er NOT MATCHING i grep)
+
+---
+<br>
+<br>
+
+## **33. Ukens utfordring nr. 2: Lag en kommando som teller opp hvor mange ganger strengen "haugerud" finnes tilsammen i filene /etc/passwd og /etc/group på data2500.**
+
+```bash
+grep -c 'haugerud' /etc/passwd /etc/group | awk -F: '{s+=$2} END {print s}'
+```
+0 forekomster i passwd, 1 i group.
+---
+<br>
+<br>
 
 
 ## **34.(Oblig) Lag et script usrbin.bash:**
