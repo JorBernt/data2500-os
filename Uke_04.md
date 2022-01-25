@@ -488,3 +488,15 @@ Vi er på samme sted. For å kunne havne /usr/bin må vi kjøre scriptet i samme
 
 <br>
 <br>
+
+## **35. Lag script for å appende fra meminfo til fil**
+
+```bash
+#! /bin/bash
+
+cat /proc/meminfo | grep $1 >> $1.dat
+```
+---
+
+<br>
+<br>
