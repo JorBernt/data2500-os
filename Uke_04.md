@@ -240,7 +240,7 @@ Nei, det gir ikke leserettigheter.
 
 ## **20. Kan man slette en fil man selv eier, men ikke har skriverettigheter til?**
 
-Nei, det gir ikke leserettigheter.
+Ja, men man får et spørsmål om man vil slette en skrivebeskyttet fil.
 
 ---
 
@@ -494,7 +494,7 @@ Vi er på samme sted. For å kunne havne /usr/bin må vi kjøre scriptet i samme
 ```bash
 #! /bin/bash
 
-cat /proc/meminfo | grep $1 >> $1.dat
+cat /proc/meminfo | grep $1 >>$1.dat
 ```
 ---
 
