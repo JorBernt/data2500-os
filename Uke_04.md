@@ -188,8 +188,7 @@ hostname
 ## **15. Gi en Linux-kommando som finner ut hvilket operativsystem maskinen din kjører og hvilken versjon det er.**
 
 ```
-uname -o -r
-uname -a
+lsb_release -a
 ```
 
 ---
