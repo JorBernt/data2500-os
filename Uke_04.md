@@ -146,13 +146,13 @@ $ ssh -p 635 s135@intel2.vlab.cs.oslomet.no
   
 **Som før er portnummeret s-nummeret + 500, 635 er kun for s135. Da kommer du inn på en helt nylaget server, du har fortsatt tilgang til s-serveren på intel3 med alt du har laget der. Her er det en mengde mapper med forskjellige navn, 10 mapper som hver har 10 undermapper som igjen hver har 10 undermapper, altså totalt tusen mapper. Mappesystemet er forskjellig for hver eneste student, så det hjelper ikke å se på naboen sine mapper. Nede i en av disse mappene ligger det en fil som heter file.txt og ukens praktiske oppgave er å finne denne filen og det ordet på 10 tegn som filen inneholder. Finn dette ordet og skriv det inn i rapporten, ett ord for hvert medlem i gruppen. Skriv inn ordene sammen med s-nummeret det tilhører.**
 
-```
+```bash
 find /home -name '*.txt'
 ```
 
 Supercommand :D (hopper inn i mappen) :
 
-```
+```bash
 cd "$(find -name '*.txt' -type f -printf '%h\n' -quit)"
 ```
 
@@ -166,7 +166,7 @@ cd "$(find -name '*.txt' -type f -printf '%h\n' -quit)"
 
 ## **13. (Oblig) Gi en Linux-kommando som gir deg brukernavnet ditt.**
 
-```
+```bash
 whoami
 ```
 
@@ -176,7 +176,7 @@ whoami
 <br>
 
 ## **14. Gi en Linux-kommando som viser host-navnet på maskinen du sitter på.**
-```
+```bash
 hostname
 ```
 
@@ -187,8 +187,10 @@ hostname
 
 ## **15. Gi en Linux-kommando som finner ut hvilket operativsystem maskinen din kjører og hvilken versjon det er.**
 
-```
+```bash
 lsb_release -a
+eller
+uname -a (??)
 ```
 
 ---
@@ -197,7 +199,7 @@ lsb_release -a
 <br>
 
 ## **16. Finn ut hvilke grupper du selv tilhører på din private s-server (med intel3-innlogging).**
-```
+```bash
 groups <username>
 Tilhører <username> og sudo
 ```
@@ -220,6 +222,192 @@ cat /etc/group | grep haugerud
 ## **18. (Oblig)  Hva skjer med eierskapet om man kopierer en annens fil? Prøv ved å kopiere en fil fra en annen bruker, for eksempel /home/haugerud/haugerud.txt på serveren data2500.**
 
 Den kopierte filen kommer under eierskap av brukeren som kopierte. Dette vil jeg tro skjer fordi vi har leserettighet, og derfor kan lese filen og skriver det i en egen ny fil.
+
+---
+
+<br>
+<br>
+
+## **19. Gir skriverettighet leserettighet? Har man automatisk leserettigheter hvis man har skriverettighet? Prøv!**
+
+Nei, det gir ikke leserettigheter.
+
+---
+
+<br>
+<br>
+
+
+## **20. Kan man slette en fil man selv eier, men ikke har skriverettigheter til?**
+
+Nei, det gir ikke leserettigheter.
+
+---
+
+<br>
+<br>
+
+## **21. (Oblig) På din private s-server (med intel3-innlogging), utfør en Linux-kommando som bruker grep til å skrive ut den linjen i /etc/passwd som inneholder ditt brukernavn, uten å bruke ditt brukernavn eksplisitt.**
+
+```bash
+cat /usr/passwd | grep $USER
+```
+---
+
+<br>
+<br>
+
+
+## **22. (Oblig) Tast inn inn ved shell-promptet de to linjene:**
+
+```bash
+minvar=hei
+export DINVAR=HALLO
+start et nytt bash-shell med
+bash
+og taster deretter inn i dette shellet
+$ echo $minvar 
+$ echo $DINVAR
+```
+<br>
+<br>
+
+minvar=hei lagrer hei i en variabel i shellet man er i, men når man åpner opp ett nytt, er det kun variabelen som ble eksportert som er tilgjengelig.
+Output blir :
+
+```bash
+s194@os694:~$ echo $minvar
+
+s194@os694:~$ echo $DINVAR
+HALLO
+```
+
+---
+
+<br>
+<br>
+
+
+## **23. (Oblig) Lag et script vari.sh:**
+
+```bash
+#! /bin/bash 
+min=hei
+export DIN=HALLO
+som du kjører med
+$ ./vari.sh 
+og taster deretter
+$ echo $min 
+$ echo $DIN
+```
+<br>
+<br>
+
+Output blir :
+
+```bash
+s194@os694:~$ echo $min
+
+s194@os694:~$ echo $DIN
+
+```
+
+Dette var ikke som forventet, vi forventet samme output som forrige oppgave.
+Dette fungerer ikke på samme måte, fordi et bash-script kjøres i et eget subshell.
+Om man skriver
+```bash
+s194@os694:~$ source <script>.sh
+eller
+s194@os694:~$ . <script>.sh
+```
+vil det fungere. Da kjøres scriptet i samme shell.
+
+---
+
+<br>
+<br>
+
+## **24. Start en editor på data2500. Anta at editoren henger av en eller annen grunn. Logg inn på data2500 i et annet vindu og drep editor-prosessen med kommandoen kill. Hint: Du må finne editorens PID med ps.**
+
+Jeg fant prossenen med ps aux fra en annen terminal, og drepte den med kill <PID>
+Da avsluttet editoren i det andre vinduet med en gang med følgende melding:
+
+```bash
+***Fatal Error: Killed by signal 15.
+
+jed version: 0.99.19/Unix
+ Compiled with GNU C 9.2
+S-Lang version: 2.3.2
+
+jed compile-time options:
+ +LINE_ATTRIBUTES +BUFFER_LOCAL_VARS +SAVE_NARROW +TTY_MENUS
+ +EMACS_LOCKING +MULTICLICK +SUBPROCESSES +DFA_SYNTAX +ABBREVS
+ +COLOR_COLUMNS +LINE_MARKS +GPM_MOUSE +IMPORT
+CBuf: 0x557f76e645b0, CLine: 0x557f76e162e0, Point 11
+CLine: data: 0x557f76e64580, len = 11, next: (nil), prev (nil)
+Max_LineNum: 1, LineNum: 1
+JWindow: 0x557f76e5dbc0, top: 1, rows: 27, buffer: 0x557f76e645b0
+
+```
+
+---
+
+<br>
+<br>
+
+## **25.Bruk uname slik at navnet på OS'et som kjøres legges i variabelen $OS (etterpå skal echo $OS gi Linux).**
+
+```bash
+s194@os694:~$ export OS="$(uname)"
+s194@os694:~$ echo $OS
+Linux
+```
+---
+
+<br>
+<br>
+
+## **26.Legg til katalogen ~/bin i \$PATH. Legg endringen til i ~/.bashrc for at den skal være varig. Legger du senere scriptene du lager i ~/bin kan de da kjøres fra hvilken som helst katalog. Legg et script i ~/bin og sjekk at det kan kjøres fra hvorsomhelst. Sjekk om "." (katalogen du står i) er med i \$PATH. Hvis ikke må du skrive \$ ./mittscript for å få kjørt et script som heter mittscript. Legg i såfall til "." i PATH og lagre endringen i ~/.bashrc. Da kan du etterpå kjøre scriptet med $ mittscript.**
+
+```bash
+PATH=$PATH:~/bin
+```
+---
+
+<br>
+<br>
+
+## **29.(Oblig) Hvis du leter etter filer med navn passwd på data2500 med følgende kommando**
+```bash
+data2500:~$ find /  -name "passwd"
+```
+## **får du en masse linjer med "Permission denied". Lag en kommando som gjør at bare linjer hvor "passwd" blir funnet vises.**
+
+```bash
+find / -name "passwd" 2>/dev/null
+```
+---
+
+<br>
+<br>
+
+
+
+## **34.(Oblig) Lag et script usrbin.bash:**
+```bash
+#! /bin/bash 
+cd /usr/bin 
+echo "er i $(pwd)"
+som du kjører med
+$ ./usrbin.bash 
+```
+## **Hvor i filtreet er du etter at scriptet har kjørt? Forklar. Prøv å kjøre scriptet på en slik måte at du befinner deg i /usr/bin etter at det har kjørt.**
+
+Vi er på samme sted. For å kunne havne /usr/bin må vi kjøre scriptet i samme shell, enten ved bruk av 'source' eller '.' slik:
+
+```bash
+. usrbin.bash
+```
 
 ---
 
