@@ -329,7 +329,7 @@ vil det fungere. Da kjøres scriptet i samme shell.
 
 ## **24. Start en editor på data2500. Anta at editoren henger av en eller annen grunn. Logg inn på data2500 i et annet vindu og drep editor-prosessen med kommandoen kill. Hint: Du må finne editorens PID med ps.**
 
-Jeg fant prossenen med ps aux fra en annen terminal, og drepte den med kill <PID>
+Jeg fant prosessen med ps aux fra en annen terminal, og drepte den med kill. <PID> <br>
 Da avsluttet editoren i det andre vinduet med en gang med følgende melding:
 
 ```bash
