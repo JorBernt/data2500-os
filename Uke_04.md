@@ -500,3 +500,54 @@ cat /proc/meminfo | grep $1 >>$1.dat
 
 <br>
 <br>
+
+## **36.Ukens utfordring nr. 3:  I en tom katalog med navn ~/tmp utføres følgende Linux-kommandoer:**
+```bash
+$ mkdir dir1
+$ mkdir dir2
+$ mkdir dir3
+$ for nr in * ;do touch $nr/fil$nr;done
+$ mv dir1 dir2
+$ mv dir3 dir2
+```
+
+## **Bruk kommandoen tree eller tegn en liten skisse som viser katalogstrukturen under ~/tmp med navn på alle kataloger og filer etter at disse kommandoene er utført.**
+
+```bash
+s354410@data2500:~/tmp2$ tree
+.
+└── dir2
+    ├── dir1
+    │   └── fildir1
+    ├── dir3
+    │   └── fildir3
+    └── fildir2
+
+3 directories, 3 files
+```
+
+---
+
+<br>
+<br>
+
+## **37.Ukens utfordring nr. 4: Anta at du er i en katalog med en mengde filer med filendelse .HTM. Lag et script som endrer fil-endelse på alle disse filene til .html. Bruk basename fra oppgaven over til å løse dette problemet. Kommandoen $ basename dir/fil.txt gir fil.txt til resultatet. For å legge resultatet av en kommando inn i en variabel, bruker man apostrofer. Etter**
+```bash
+name=`basename dir/fil.txt`
+```
+
+## **har variabelen $name verdien fil.txt. Legg merke til at det er forskjell på apostrofene ' og `. Den siste som heller bakover brukes i det siste eksempelet. Alternativt kan man bruke følgende metode:**
+```bash
+name=$(basename dir/fil.txt)
+```
+
+Rename script:
+```bash
+#! /bin/bash
+
+for fil in *.htm
+do
+        name="$(basename $fil .htm)"
+        mv $fil $name.html
+done
+```
