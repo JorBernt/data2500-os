@@ -226,3 +226,107 @@ perm ~/www/bilder
 ---
 <br>
 <br>
+
+## **8. (Oblig) Lag et bash-script count.bash som skriver ut en oversikt over hvor mange linker, filer og kataloger det finnes i katalogen scriptet kjøres fra og i alle dens underkataloger. Bruker du doble parenteser rundt aritmetiske uttrykk (( x++ )) kan du bruke samme syntaks som i Java (og sløyfe $ foran variabelnavn). Hint: Test kommandoene ls -R, tree -if og find . og se om noen av dem kan brukes i scriptet.**
+
+```bash
+#! /bin/bash
+
+filer=0
+mapper=0
+linker=0
+
+for fil in $(tree $1 -i -f --noreport)
+do
+        if [ -d $fil ]
+        then
+                ((mapper++))
+        elif [ -f $fil ]
+        then
+                ((filer++))
+        elif [ -l $fil]
+        then
+                ((linker++))
+        fi
+        echo Leser fil $fil
+done
+
+echo Antall filer: $filer
+echo Antall mapper: $mapper
+echo Antall linker: $linker
+```
+
+---
+
+<br>
+<br>
+
+## **11. Skriv et shell-script som tar en streng som argument og skriver ut en melding som avgjør om dette er en fil og om i såfall den er angitt med absolutt eller relativ path (om en relativ path er angitt til filen, skal scriptet sjekke om den finnes relativt til der scriptet kjøres fra. Merk: hvis man gjør en test på en fil i et script, utføres testen fra den mappen som scriptet starter i.). (hint: Testen if [ -f $fil ] ; then slår til om $fil er en fil. Bruk konstruksjonen \${variabel:offset:length} for å trekke ut ett tegn fra en streng. Eventuelt cut -c 1.)**
+
+
+```bash
+#! /bin/bash
+
+if [ -f $1 ]
+then
+        echo Er en fil
+else
+        echo Er ikke en fil
+fi
+```
+
+---
+<br>
+<br>
+
+## **12. (Oblig) Utvid scriptet i forrige oppgave slik at brukeren kan angi flere enn en fil. Gjør det ved å gå igjennom argumentene ett for ett og utføre det samme for hvert argument.**
+
+```bash
+#! /bin/bash
+
+for fil in "$@"
+do
+        if [ -f $fil ]
+        then
+                echo $fil er en fil
+        else
+                echo $fil er ikke en fil
+        fi
+done
+```
+```bash
+s194@os694:~/uke5$ ./isFile2.sh sr.sh count.bash publiser.sh finnesikke!
+sr.sh er en fil
+count.bash er en fil
+publiser.sh er en fil
+finnesikke! er ikke en fil
+```
+
+---
+<br>
+<br>
+
+## **15. (Oblig) Lag et bash-script "finnOrd" som tar ett ord som argument og går igjennom alle filer i katalogen scriptet blir utført fra og i alle underkataloger, og finner linjer i disse filene som inneholder dette ordet. For hver fil som inneholder ordet, skal scriptet gi meldingen:**
+```
+########### Fant "ord" i fil "filnavn" i følgende linje(r):
+```
+## **Og så skrive ut alle linjene (Hint: bruk find . og grep).**
+
+```bash
+#! /bin/bash
+
+for fil in $(find .)
+do
+    if [ -f $fil ]
+    then
+        linje=$(grep $1 $fil)
+        if [ $linje ]
+        then
+                echo "########## Fant $1 i fil $fil i følgende linjer:"
+                echo $linje
+        fi
+    fi
+done
+```
+
+
