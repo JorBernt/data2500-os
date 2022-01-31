@@ -261,7 +261,7 @@ echo Antall linker: $linker
 <br>
 <br>
 
-## **11. Skriv et shell-script som tar en streng som argument og skriver ut en melding som avgjør om dette er en fil og om i såfall den er angitt med absolutt eller relativ path (om en relativ path er angitt til filen, skal scriptet sjekke om den finnes relativt til der scriptet kjøres fra. Merk: hvis man gjør en test på en fil i et script, utføres testen fra den mappen som scriptet starter i.). (hint: Testen if [ -f $fil ] ; then slår til om $fil er en fil. Bruk konstruksjonen \${variabel:offset:length} for å trekke ut ett tegn fra en streng. Eventuelt cut -c 1.)**
+## **11. (Oblig) Skriv et shell-script som tar en streng som argument og skriver ut en melding som avgjør om dette er en fil og om i såfall den er angitt med absolutt eller relativ path (om en relativ path er angitt til filen, skal scriptet sjekke om den finnes relativt til der scriptet kjøres fra. Merk: hvis man gjør en test på en fil i et script, utføres testen fra den mappen som scriptet starter i.). (hint: Testen if [ -f $fil ] ; then slår til om $fil er en fil. Bruk konstruksjonen \${variabel:offset:length} for å trekke ut ett tegn fra en streng. Eventuelt cut -c 1.)**
 
 
 ```bash
