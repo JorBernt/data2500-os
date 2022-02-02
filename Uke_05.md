@@ -261,6 +261,52 @@ echo Antall linker: $linker
 <br>
 <br>
 
+## **9. Ukens utfordring nr. 2: Lag en versjon av scriptet i spørsmål 5.7 som antar at ~/www eksisterer og gir**
+1. **alle rettigheter for eier, men kun lese- og kjørerettigheter for alle andre for ~/www og alle undermapper**
+2. **lese og skriverettigheter for eier, men kun leserettigheter for alle andre for alle filer i ~/www og dens undermapper**
+
+**Filer i ~/www og undermapper som allerede har kjørerettigheter skal beholde det. Hint: Se opsjonen X til chmod i manual-siden.**
+
+```bash
+#! /bin/bash
+
+chmod chmod u=rwx,g+rw,o+rw ~/www
+for fil in $(tree ~/www/ -i -f --noreport)
+do
+        if [ -d $fil ]
+        then
+                chmod u=rwx,g+rx,o+rx $fil
+        elif [ -f $fil ]
+        then
+                chmod u+rw,g-w+r,o-w+r $fil
+        fi
+done
+```
+---
+<br>
+<br>
+
+## **10. Ukens utfordring nr. 3: Lag en versjon av scriptet i forrige spørsmål som gir rettigheter som spesifisert der, uavhengig av hvilke rettigheter de hadde fra før.**
+
+```bash
+#! /bin/bash
+
+chmod 755 ~/www
+for fil in $(tree ~/www/ -i -f --noreport)
+do
+        if [ -d $fil ]
+        then
+                chmod 755 $fil
+        elif [ -f $fil ]
+        then
+                chmod 644 $fil
+        fi
+done
+```
+---
+<br>
+<br>
+
 ## **11. (Oblig) Skriv et shell-script som tar en streng som argument og skriver ut en melding som avgjør om dette er en fil og om i såfall den er angitt med absolutt eller relativ path (om en relativ path er angitt til filen, skal scriptet sjekke om den finnes relativt til der scriptet kjøres fra. Merk: hvis man gjør en test på en fil i et script, utføres testen fra den mappen som scriptet starter i.). (hint: Testen if [ -f $fil ] ; then slår til om $fil er en fil. Bruk konstruksjonen \${variabel:offset:length} for å trekke ut ett tegn fra en streng. Eventuelt cut -c 1.)**
 
 
@@ -306,6 +352,41 @@ finnesikke! er ikke en fil
 <br>
 <br>
 
+## **13. Skriv et bash-script rename som endrer filendelse på filer i katalogen det kjøres. Brukeren angir en filendelse og hva den skal endres til med to argumenter. Hvis man bruker rename som følger:**
+
+```
+$ ./rename wav mp3
+Endrer fil.wav til fil.mp3
+Endrer fil2.wav til fil2.mp3
+```
+
+## **skal alle filer i katalogen som har filendelse wav endres til mp3. En opplysning om hver endring skal gis som i eksempelet. Hvis brukeren ikke angir to argumenter skal scriptet avslutte og oppgi riktig syntaks. Hvis det ikke finnes filer med den filendelsen brukeren angir som første argument, skal scriptet gi en melding om det.**
+
+
+```bash
+#! /bin/bash
+
+if test "$#" -ne 2; then
+        echo "Illegal number of parameters"
+        echo "Syntax is rename <fromExt> <toExt>"
+        exit 1
+fi
+
+for f in *; do
+        ext=`sed 's/^\w\+.//' <<< "$f"`
+        if [ "$ext" = "$1" ]; then
+                echo "Renaming $f to "${f%."$1"}."$2"
+                mv -- "$f" "${f%."$1"}."$2
+        fi
+done
+```
+
+---
+
+<br>
+<br>
+
+
 ## **15. (Oblig) Lag et bash-script "finnOrd" som tar ett ord som argument og går igjennom alle filer i katalogen scriptet blir utført fra og i alle underkataloger, og finner linjer i disse filene som inneholder dette ordet. For hver fil som inneholder ordet, skal scriptet gi meldingen:**
 ```
 ########### Fant "ord" i fil "filnavn" i følgende linje(r):
@@ -328,5 +409,53 @@ do
     fi
 done
 ```
+```
+s194@os694:~/uke5$ ./finnOrd.sh "Hei"
+########## Fant Hei i fil ./fil2 i følgende linjer:
+Hei
+########## Fant Hei i fil ./fil5 i følgende linjer:
+Hei
+```
 
+## **16. Lag et shellscript som når det kjøres på data2500 gir omtrent tilsvarende som output:**
 
+```
+Linux data2500 4.4.0-101-generic #124-Ubuntu SMP Fri Nov 10 18:29:59 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+cpu MHz		: 2294.248
+MemTotal:        8175152 kB
+model name	: Common KVM processor
+/etc/lsb-release:DISTRIB_CODENAME=xenial
+/etc/os-release:VERSION_CODENAME=xenial
+/etc/os-release:UBUNTU_CODENAME=xenial
+/etc/lsb-release:DISTRIB_DESCRIPTION="Ubuntu 16.04.3 LTS"
+```
+## **Hint: Test ut kommandoen uname og se på innholdet i /proc/meminfo, /proc/cpuinfo og /etc/\*release.**
+
+```bash
+#! /bin/bash
+
+uname -a
+cat /proc/cpuinfo | grep "cpu MHz" -m 1
+cat /proc/meminfo | grep "MemTotal"
+cat /proc/cpuinfo | grep "model name" -m 1
+
+a=("DISTRIB_CODENAME" "VERSION_CODENAME" "UBUNTU_CODENAME" "DISTRIB_DESCRIPTION")
+
+for f in /etc/*release; do
+        for i in ${!a[@]}; do
+                t=$(cat $f | grep ${a[$i]})
+                if test $t; then
+                        echo $f $t
+                fi
+        done
+done
+```
+Output:
+```
+s354410@data2500:~/uke5$ ./info.sh
+Linux data2500 5.10.0-11-amd64 #1 SMP Debian 5.10.92-1 (2022-01-18) x86_64 GNU/Linux
+cpu MHz         : 3100.000
+MemTotal:        3953464 kB
+model name      : Common KVM processor
+/etc/os-release VERSION_CODENAME=bullseye
+```
