@@ -149,7 +149,7 @@ Kommandoen «ps aux» lister alle prosesser som kjører uavhengig av hvilken bru
 <br>
 <br>
 
-### **2.22.grep er en kommando som kan plukke ut linjer som matcher en spesiell tekst. For at grep skal kunne plukke ut enkelte linjer fra ps aux, må vi lime dem sammen på et vis. Dette gjør vi med en pipe (engelsk for rør, pipe-tegnet er til venstre for 1-tasten):
+### **2.22.grep er en kommando som kan plukke ut linjer som matcher en spesiell tekst. For at grep skal kunne plukke ut enkelte linjer fra ps aux, må vi lime dem sammen på et vis. Dette gjør vi med en pipe (engelsk for rør, pipe-tegnet er til venstre for 1-tasten):**
 ```
 ps aux | grep  tekst
 ```
@@ -377,7 +377,7 @@ umask 177 gir skrive-/leserettigheter til eier, og ingen til resten.
 
 # Uke 4
 
-### ** 4.1. Last ned filen latch2.dwm Hva slags logisk krets er dette(dvs. hva kan denne kretsen brukes til)? Hvilken funksjon har de to input'ene A og B? Forklar og test at forklaringen er riktig ved å velge de fire mulige kombinasjonene av input. (Noen ganger får man en "race condition" i simulatoren. Det er tilfeller hvor det har betydning hviklet signal som kommer først frem og dette bør generelt unngås. Men se bort fra dette i denne oppgaven)**
+### **4.1. Last ned filen latch2.dwm Hva slags logisk krets er dette(dvs. hva kan denne kretsen brukes til)? Hvilken funksjon har de to input'ene A og B? Forklar og test at forklaringen er riktig ved å velge de fire mulige kombinasjonene av input. (Noen ganger får man en "race condition" i simulatoren. Det er tilfeller hvor det har betydning hviklet signal som kommer først frem og dette bør generelt unngås. Men se bort fra dette i denne oppgaven)**
 
 Det er en D-lås (data) krets. Verdien som kommer inn gjennom A kan lagres. Den lagres ved å skru på og av B.
 
@@ -386,7 +386,7 @@ Det er en D-lås (data) krets. Verdien som kommer inn gjennom A kan lagres. Den 
 <br>
 <br>
 
-### ** 4.2. Last ned filen 4bitALUtest.dwm åpne den og bruk den til å teste ALU'en som er den samme som brukes i maksinen i senere oppgaver. Gå til Uke 10 i menyen til venstre på siden datamaskinarkitektur og se på den nederste tabellen. Den viser hva input må være for å kunne få ALU'en til å utføre bestemte operasjoner. Bruk denne informasjonen til å få ALU'en til å gjøre regnestykket 3 + 4 = 7 og til å øke verdien av A med en.**
+### **4.2. Last ned filen 4bitALUtest.dwm åpne den og bruk den til å teste ALU'en som er den samme som brukes i maksinen i senere oppgaver. Gå til Uke 10 i menyen til venstre på siden datamaskinarkitektur og se på den nederste tabellen. Den viser hva input må være for å kunne få ALU'en til å utføre bestemte operasjoner. Bruk denne informasjonen til å få ALU'en til å gjøre regnestykket 3 + 4 = 7 og til å øke verdien av A med en.**
 
 <p align="center">
     <img src="images\4bitalu.png" style="width: auto;" alt="">
@@ -399,7 +399,7 @@ Det er en D-lås (data) krets. Verdien som kommer inn gjennom A kan lagres. Den 
 <br>
 
 
-### ** 4.4. Last ned filen machine.dwm som er en simulering av en 4-bits datamaskin og åpne den i Digital Works. Høyreklikk på boksene som utgjør denne maskinen, velg "Edit Macro" og prøv å lokalisere ALU. Hva er ALU og hva er dens funksjon?**
+### **4.4. Last ned filen machine.dwm som er en simulering av en 4-bits datamaskin og åpne den i Digital Works. Høyreklikk på boksene som utgjør denne maskinen, velg "Edit Macro" og prøv å lokalisere ALU. Hva er ALU og hva er dens funksjon?**
 
 <p align="center">
     <img src="images\alu_in_machine.png" style="width: auto;" alt="">
@@ -425,7 +425,7 @@ Den har forskjellige kontroll-bits som kan forandre hvilken operasjon som utfør
 <br>
 <br>
 
-### ** 4.5. Maskinen som simuleres er en liten CPU som kan kjøre programmer som ligger i boksen merket ROM. Høyreklikk på boksen og velg "Edit Memory Contents". Dette er maskininstruksjonene i programmet fra forelesningen som er en liten for-løkke. Kjør programmet ved å klikke deg igjennom med Step-knappen eller ved å trykke på play. Følg med i ROM og se hvordan instruksjonene blir utført en for en. Hva blir resultatet av beregningen og hvor ligger dette resultatet når beregningen er ferdig?**
+### **4.5. Maskinen som simuleres er en liten CPU som kan kjøre programmer som ligger i boksen merket ROM. Høyreklikk på boksen og velg "Edit Memory Contents". Dette er maskininstruksjonene i programmet fra forelesningen som er en liten for-løkke. Kjør programmet ved å klikke deg igjennom med Step-knappen eller ved å trykke på play. Følg med i ROM og se hvordan instruksjonene blir utført en for en. Hva blir resultatet av beregningen og hvor ligger dette resultatet når beregningen er ferdig?**
 
 Resultatet lagres i R2, og er 3.
 
@@ -435,7 +435,7 @@ Resultatet lagres i R2, og er 3.
 <br>
 
 
-### ** 4.6. I forelesningsnotatene står det at i den simulerte datamaskinen er det "gjort visse endringer i forhold til von Neumann arkitekturen". Les forelesningsnotater eller let på nettet og finn ut hva som er den viktigste forskjellen på von Neuman arkitekturen og Harvard arkitekturen. Hvilken arkitektur ligner den simulerte datamaskinen mest på?**
+### **4.6. I forelesningsnotatene står det at i den simulerte datamaskinen er det "gjort visse endringer i forhold til von Neumann arkitekturen". Les forelesningsnotater eller let på nettet og finn ut hva som er den viktigste forskjellen på von Neuman arkitekturen og Harvard arkitekturen. Hvilken arkitektur ligner den simulerte datamaskinen mest på?**
 
 
 
@@ -445,7 +445,7 @@ Resultatet lagres i R2, og er 3.
 <br>
 <br>
 
-### ** 4.7. Ta utgangspunkt i DigitalWorks simuleringen av en datamaskin fra forelsningen og endre maskinkoden i ROM slik at løkken gjennomløpes bare to ganger og hvor S økes med to og ikke i, det vil si utfører maskinkode som er den kompilerte versjonen av følgende høynivåkode:**
+### **4.7. Ta utgangspunkt i DigitalWorks simuleringen av en datamaskin fra forelsningen og endre maskinkoden i ROM slik at løkken gjennomløpes bare to ganger og hvor S økes med to og ikke i, det vil si utfører maskinkode som er den kompilerte versjonen av følgende høynivåkode:**
 
 ```
 
@@ -459,7 +459,7 @@ for(i=1;i < 3;i++)
 <br>
 <br>
 
-### ** 4.12. Logg inn som du tidligere har gjort til s-serveren hvor du har en s-bruker og hvor passordet ligger i s-gruppene i Canvas. Men bruk intel2 istedet for intel3 som du har brukt tidligere:**
+### **4.12. Logg inn som du tidligere har gjort til s-serveren hvor du har en s-bruker og hvor passordet ligger i s-gruppene i Canvas. Men bruk intel2 istedet for intel3 som du har brukt tidligere:**
 
 ```
 $ ssh -p 635 s135@intel2.vlab.cs.oslomet.no
