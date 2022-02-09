@@ -377,7 +377,7 @@ umask 177 gir skrive-/leserettigheter til eier, og ingen til resten.
 
 # Uke 4
 
-### **(Oblig) 4.1. Last ned filen latch2.dwm Hva slags logisk krets er dette(dvs. hva kan denne kretsen brukes til)? Hvilken funksjon har de to input'ene A og B? Forklar og test at forklaringen er riktig ved å velge de fire mulige kombinasjonene av input. (Noen ganger får man en "race condition" i simulatoren. Det er tilfeller hvor det har betydning hviklet signal som kommer først frem og dette bør generelt unngås. Men se bort fra dette i denne oppgaven)**
+### ** 4.1. Last ned filen latch2.dwm Hva slags logisk krets er dette(dvs. hva kan denne kretsen brukes til)? Hvilken funksjon har de to input'ene A og B? Forklar og test at forklaringen er riktig ved å velge de fire mulige kombinasjonene av input. (Noen ganger får man en "race condition" i simulatoren. Det er tilfeller hvor det har betydning hviklet signal som kommer først frem og dette bør generelt unngås. Men se bort fra dette i denne oppgaven)**
 
 Det er en D-lås (data) krets. Verdien som kommer inn gjennom A kan lagres. Den lagres ved å skru på og av B.
 
@@ -386,7 +386,7 @@ Det er en D-lås (data) krets. Verdien som kommer inn gjennom A kan lagres. Den 
 <br>
 <br>
 
-### **(Oblig) 4.2. Last ned filen 4bitALUtest.dwm åpne den og bruk den til å teste ALU'en som er den samme som brukes i maksinen i senere oppgaver. Gå til Uke 10 i menyen til venstre på siden datamaskinarkitektur og se på den nederste tabellen. Den viser hva input må være for å kunne få ALU'en til å utføre bestemte operasjoner. Bruk denne informasjonen til å få ALU'en til å gjøre regnestykket 3 + 4 = 7 og til å øke verdien av A med en.**
+### ** 4.2. Last ned filen 4bitALUtest.dwm åpne den og bruk den til å teste ALU'en som er den samme som brukes i maksinen i senere oppgaver. Gå til Uke 10 i menyen til venstre på siden datamaskinarkitektur og se på den nederste tabellen. Den viser hva input må være for å kunne få ALU'en til å utføre bestemte operasjoner. Bruk denne informasjonen til å få ALU'en til å gjøre regnestykket 3 + 4 = 7 og til å øke verdien av A med en.**
 
 <p align="center">
     <img src="images\4bitalu.png" style="width: auto;" alt="">
@@ -399,7 +399,7 @@ Det er en D-lås (data) krets. Verdien som kommer inn gjennom A kan lagres. Den 
 <br>
 
 
-### **(Oblig) 4.4. Last ned filen machine.dwm som er en simulering av en 4-bits datamaskin og åpne den i Digital Works. Høyreklikk på boksene som utgjør denne maskinen, velg "Edit Macro" og prøv å lokalisere ALU. Hva er ALU og hva er dens funksjon?**
+### ** 4.4. Last ned filen machine.dwm som er en simulering av en 4-bits datamaskin og åpne den i Digital Works. Høyreklikk på boksene som utgjør denne maskinen, velg "Edit Macro" og prøv å lokalisere ALU. Hva er ALU og hva er dens funksjon?**
 
 <p align="center">
     <img src="images\alu_in_machine.png" style="width: auto;" alt="">
@@ -425,7 +425,7 @@ Den har forskjellige kontroll-bits som kan forandre hvilken operasjon som utfør
 <br>
 <br>
 
-### **(Oblig) 4.5. Maskinen som simuleres er en liten CPU som kan kjøre programmer som ligger i boksen merket ROM. Høyreklikk på boksen og velg "Edit Memory Contents". Dette er maskininstruksjonene i programmet fra forelesningen som er en liten for-løkke. Kjør programmet ved å klikke deg igjennom med Step-knappen eller ved å trykke på play. Følg med i ROM og se hvordan instruksjonene blir utført en for en. Hva blir resultatet av beregningen og hvor ligger dette resultatet når beregningen er ferdig?**
+### ** 4.5. Maskinen som simuleres er en liten CPU som kan kjøre programmer som ligger i boksen merket ROM. Høyreklikk på boksen og velg "Edit Memory Contents". Dette er maskininstruksjonene i programmet fra forelesningen som er en liten for-løkke. Kjør programmet ved å klikke deg igjennom med Step-knappen eller ved å trykke på play. Følg med i ROM og se hvordan instruksjonene blir utført en for en. Hva blir resultatet av beregningen og hvor ligger dette resultatet når beregningen er ferdig?**
 
 Resultatet lagres i R2, og er 3.
 
@@ -435,7 +435,7 @@ Resultatet lagres i R2, og er 3.
 <br>
 
 
-### **(Oblig) 4.6. I forelesningsnotatene står det at i den simulerte datamaskinen er det "gjort visse endringer i forhold til von Neumann arkitekturen". Les forelesningsnotater eller let på nettet og finn ut hva som er den viktigste forskjellen på von Neuman arkitekturen og Harvard arkitekturen. Hvilken arkitektur ligner den simulerte datamaskinen mest på?**
+### ** 4.6. I forelesningsnotatene står det at i den simulerte datamaskinen er det "gjort visse endringer i forhold til von Neumann arkitekturen". Les forelesningsnotater eller let på nettet og finn ut hva som er den viktigste forskjellen på von Neuman arkitekturen og Harvard arkitekturen. Hvilken arkitektur ligner den simulerte datamaskinen mest på?**
 
 
 
@@ -445,7 +445,7 @@ Resultatet lagres i R2, og er 3.
 <br>
 <br>
 
-### **(Oblig) 4.7. Ta utgangspunkt i DigitalWorks simuleringen av en datamaskin fra forelsningen og endre maskinkoden i ROM slik at løkken gjennomløpes bare to ganger og hvor S økes med to og ikke i, det vil si utfører maskinkode som er den kompilerte versjonen av følgende høynivåkode:**
+### ** 4.7. Ta utgangspunkt i DigitalWorks simuleringen av en datamaskin fra forelsningen og endre maskinkoden i ROM slik at løkken gjennomløpes bare to ganger og hvor S økes med to og ikke i, det vil si utfører maskinkode som er den kompilerte versjonen av følgende høynivåkode:**
 
 ```
 
@@ -459,7 +459,7 @@ for(i=1;i < 3;i++)
 <br>
 <br>
 
-### **(Oblig) 4.12. Logg inn som du tidligere har gjort til s-serveren hvor du har en s-bruker og hvor passordet ligger i s-gruppene i Canvas. Men bruk intel2 istedet for intel3 som du har brukt tidligere:**
+### ** 4.12. Logg inn som du tidligere har gjort til s-serveren hvor du har en s-bruker og hvor passordet ligger i s-gruppene i Canvas. Men bruk intel2 istedet for intel3 som du har brukt tidligere:**
 
 ```
 $ ssh -p 635 s135@intel2.vlab.cs.oslomet.no
@@ -487,7 +487,7 @@ cd "$(find -name '*.txt' -type f -printf '%h\n' -quit)"
 <br>
 <br>
 
-### **4.13. (Oblig) Gi en Linux-kommando som gir deg brukernavnet ditt.**
+### **4.13.  Gi en Linux-kommando som gir deg brukernavnet ditt.**
 
 ```bash
 whoami
@@ -498,7 +498,7 @@ whoami
 <br>
 <br>
 
-### **4.18. (Oblig)  Hva skjer med eierskapet om man kopierer en annens fil? Prøv ved å kopiere en fil fra en annen bruker, for eksempel /home/haugerud/haugerud.txt på serveren data2500.**
+### **4.18.   Hva skjer med eierskapet om man kopierer en annens fil? Prøv ved å kopiere en fil fra en annen bruker, for eksempel /home/haugerud/haugerud.txt på serveren data2500.**
 
 Den kopierte filen kommer under eierskap av brukeren som kopierte. Dette vil jeg tro skjer fordi vi har leserettighet, og derfor kan lese filen og skriver det i en egen ny fil.
 
@@ -507,7 +507,7 @@ Den kopierte filen kommer under eierskap av brukeren som kopierte. Dette vil jeg
 <br>
 <br>
 
-### **4.21. (Oblig) På din private s-server (med intel3-innlogging), utfør en Linux-kommando som bruker grep til å skrive ut den linjen i /etc/passwd som inneholder ditt brukernavn, uten å bruke ditt brukernavn eksplisitt.**
+### **4.21.  På din private s-server (med intel3-innlogging), utfør en Linux-kommando som bruker grep til å skrive ut den linjen i /etc/passwd som inneholder ditt brukernavn, uten å bruke ditt brukernavn eksplisitt.**
 
 ```bash
 cat /usr/passwd | grep $USER
@@ -518,7 +518,7 @@ cat /usr/passwd | grep $USER
 <br>
 
 
-### **4.22. (Oblig) Tast inn inn ved shell-promptet de to linjene:**
+### **4.22.  Tast inn inn ved shell-promptet de to linjene:**
 
 ```bash
 minvar=hei
@@ -548,7 +548,7 @@ HALLO
 <br>
 
 
-### **4.23. (Oblig) Lag et script vari.sh:**
+### **4.23.  Lag et script vari.sh:**
 
 ```bash
 #! /bin/bash 
@@ -627,7 +627,7 @@ Linux
 <br>
 <br>
 
-### **4.29.(Oblig) Hvis du leter etter filer med navn passwd på data2500 med følgende kommando**
+### **4.29. Hvis du leter etter filer med navn passwd på data2500 med følgende kommando**
 ```bash
 data2500:~$ find /  -name "passwd"
 ```
@@ -641,7 +641,7 @@ find / -name "passwd" 2>/dev/null
 <br>
 <br>
 
-### **4.34.(Oblig) Lag et script usrbin.bash:**
+### **4.34. Lag et script usrbin.bash:**
 ```bash
 #! /bin/bash 
 cd /usr/bin 
@@ -664,7 +664,7 @@ Vi er på samme sted. For å kunne havne /usr/bin må vi kjøre scriptet i samme
 <br>
 <br>
 
-#Uke 5
+# Uke 5
 
 ### **5.1. Kompiler C-programmet Hello world fra forelesningen på data2500 med gcc hello.c og kjør det med**
 ```
@@ -682,7 +682,7 @@ $ ./hello
 <br>
 <br>
 
-### **5.2. (Oblig) Kompiler sum.c fra forelesningen sjekk at du får riktig svar. Kompiler så sammen sumMain.c og as.s fra samme forelesning med**
+### **5.2.  Kompiler sum.c fra forelesningen sjekk at du får riktig svar. Kompiler så sammen sumMain.c og as.s fra samme forelesning med**
 
 ```bash
 $ gcc sumMain.c as.s
@@ -734,7 +734,7 @@ Sum = 10
 <br>
 <br>
 
-### **5.3.(Oblig) Kopier as.s til en ny fil as2.s og endre assembly-koden slik at den utfører**
+### **5.3. Kopier as.s til en ny fil as2.s og endre assembly-koden slik at den utfører**
 ```c
 S = 0;
 for(i=1;i < 3;i++)
@@ -771,7 +771,7 @@ $ Sum = 4
 <br>
 <br>
 
-### **5.6. (Oblig)Skriv et shell-script som skriver ut verdien av den globale variabelen SHELL hvis den er satt og gir melding om at den er udefinert hvis den ikke er satt.**
+### **5.6. Skriv et shell-script som skriver ut verdien av den globale variabelen SHELL hvis den er satt og gir melding om at den er udefinert hvis den ikke er satt.**
 
 ```bash
 #! /bin/bash
@@ -797,7 +797,7 @@ Variabelen er udefinert
 <br>
 <br>
 
-### **5.7. (Oblig) Lag et bash-script med navn publiser som setter rettighetene til alle filer i ~/www slik at eier kun kan lese og skrive, mens alle andre kun kan lese dem. I tillegg skal scriptet gi tilsvarende rettigheter for alle filer i ~/www/bilder. Hvis mappene ~/www og ~/www/bilder ikke eksisterer, skal de opprettes og gis alle rettigheter for eier, men kun lese- og kjørerettigheter for alle andre. Om det finnes andre kataloger i ~/www skal disse ikke endre rettigheter, heller ikke underkataloger og filer i disse.**
+### **5.7.  Lag et bash-script med navn publiser som setter rettighetene til alle filer i ~/www slik at eier kun kan lese og skrive, mens alle andre kun kan lese dem. I tillegg skal scriptet gi tilsvarende rettigheter for alle filer i ~/www/bilder. Hvis mappene ~/www og ~/www/bilder ikke eksisterer, skal de opprettes og gis alle rettigheter for eier, men kun lese- og kjørerettigheter for alle andre. Om det finnes andre kataloger i ~/www skal disse ikke endre rettigheter, heller ikke underkataloger og filer i disse.**
 
 ```bash
 #! /bin/bash
@@ -827,7 +827,7 @@ perm ~/www/bilder
 <br>
 <br>
 
-### **5.8. (Oblig) Lag et bash-script count.bash som skriver ut en oversikt over hvor mange linker, filer og kataloger det finnes i katalogen scriptet kjøres fra og i alle dens underkataloger. Bruker du doble parenteser rundt aritmetiske uttrykk (( x++ )) kan du bruke samme syntaks som i Java (og sløyfe $ foran variabelnavn). Hint: Test kommandoene ls -R, tree -if og find . og se om noen av dem kan brukes i scriptet.**
+### **5.8.  Lag et bash-script count.bash som skriver ut en oversikt over hvor mange linker, filer og kataloger det finnes i katalogen scriptet kjøres fra og i alle dens underkataloger. Bruker du doble parenteser rundt aritmetiske uttrykk (( x++ )) kan du bruke samme syntaks som i Java (og sløyfe $ foran variabelnavn). Hint: Test kommandoene ls -R, tree -if og find . og se om noen av dem kan brukes i scriptet.**
 
 ```bash
 #! /bin/bash
@@ -861,7 +861,7 @@ echo Antall linker: $linker
 <br>
 <br>
 
-### **5.11. (Oblig) Skriv et shell-script som tar en streng som argument og skriver ut en melding som avgjør om dette er en fil og om i såfall den er angitt med absolutt eller relativ path (om en relativ path er angitt til filen, skal scriptet sjekke om den finnes relativt til der scriptet kjøres fra. Merk: hvis man gjør en test på en fil i et script, utføres testen fra den mappen som scriptet starter i.). (hint: Testen if [ -f $fil ] ; then slår til om $fil er en fil. Bruk konstruksjonen \${variabel:offset:length} for å trekke ut ett tegn fra en streng. Eventuelt cut -c 1.)**
+### **5.11.  Skriv et shell-script som tar en streng som argument og skriver ut en melding som avgjør om dette er en fil og om i såfall den er angitt med absolutt eller relativ path (om en relativ path er angitt til filen, skal scriptet sjekke om den finnes relativt til der scriptet kjøres fra. Merk: hvis man gjør en test på en fil i et script, utføres testen fra den mappen som scriptet starter i.). (hint: Testen if [ -f $fil ] ; then slår til om $fil er en fil. Bruk konstruksjonen \${variabel:offset:length} for å trekke ut ett tegn fra en streng. Eventuelt cut -c 1.)**
 
 
 ```bash
@@ -879,7 +879,7 @@ fi
 <br>
 <br>
 
-### **5.12. (Oblig) Utvid scriptet i forrige oppgave slik at brukeren kan angi flere enn en fil. Gjør det ved å gå igjennom argumentene ett for ett og utføre det samme for hvert argument.**
+### **5.12.  Utvid scriptet i forrige oppgave slik at brukeren kan angi flere enn en fil. Gjør det ved å gå igjennom argumentene ett for ett og utføre det samme for hvert argument.**
 
 ```bash
 #! /bin/bash
@@ -906,7 +906,7 @@ finnesikke! er ikke en fil
 <br>
 <br>
 
-### **5.15. (Oblig) Lag et bash-script "finnOrd" som tar ett ord som argument og går igjennom alle filer i katalogen scriptet blir utført fra og i alle underkataloger, og finner linjer i disse filene som inneholder dette ordet. For hver fil som inneholder ordet, skal scriptet gi meldingen:**
+### **5.15.  Lag et bash-script "finnOrd" som tar ett ord som argument og går igjennom alle filer i katalogen scriptet blir utført fra og i alle underkataloger, og finner linjer i disse filene som inneholder dette ordet. For hver fil som inneholder ordet, skal scriptet gi meldingen:**
 ```
 ########### Fant "ord" i fil "filnavn" i følgende linje(r):
 ```
@@ -940,7 +940,7 @@ Hei
 <br>
 <br>
 
-## **5.17.(Oblig) Logg inn på din private intel2 s-server som du har brukt tidligere med noe slikt som**
+## **5.17. Logg inn på din private intel2 s-server som du har brukt tidligere med noe slikt som**
 
 ```
 cd ~/...
