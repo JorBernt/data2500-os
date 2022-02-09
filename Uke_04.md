@@ -125,7 +125,7 @@ R4: 0100
 <br>
 <br>
 
-## **11. Skriv maskinkode som genererer Fibonacci-rekken 1, 1, 2, 3, 5, 8, 13, der tallene vises fortløpende i to registere, for eksempel R0 og R1. Hvorfor må rekken stoppe her?**
+### **11. Skriv maskinkode som genererer Fibonacci-rekken 1, 1, 2, 3, 5, 8, 13, der tallene vises fortløpende i to registere, for eksempel R0 og R1. Hvorfor må rekken stoppe her?**
 
 <p align="center">
     <img src="images\fibonacci.png" style="width: auto;" alt="">
@@ -138,7 +138,7 @@ Den må sluttes av der, fordi 13 + 8 > 15, som er maks verdi vi kan lagre i 4 bi
 <br>
 <br>
 
-## **(Oblig) 12. Logg inn som du tidligere har gjort til s-serveren hvor du har en s-bruker og hvor passordet ligger i s-gruppene i Canvas. Men bruk intel2 istedet for intel3 som du har brukt tidligere:**
+### **(Oblig) 12. Logg inn som du tidligere har gjort til s-serveren hvor du har en s-bruker og hvor passordet ligger i s-gruppene i Canvas. Men bruk intel2 istedet for intel3 som du har brukt tidligere:**
 
 ```
 $ ssh -p 635 s135@intel2.vlab.cs.oslomet.no
@@ -166,7 +166,7 @@ cd "$(find -name '*.txt' -type f -printf '%h\n' -quit)"
 <br>
 <br>
 
-## **13. (Oblig) Gi en Linux-kommando som gir deg brukernavnet ditt.**
+### **13. (Oblig) Gi en Linux-kommando som gir deg brukernavnet ditt.**
 
 ```bash
 whoami
@@ -177,7 +177,7 @@ whoami
 <br>
 <br>
 
-## **14. Gi en Linux-kommando som viser host-navnet på maskinen du sitter på.**
+### **14. Gi en Linux-kommando som viser host-navnet på maskinen du sitter på.**
 ```bash
 hostname
 ```
@@ -187,7 +187,7 @@ hostname
 <br>
 <br>
 
-## **15. Gi en Linux-kommando som finner ut hvilket operativsystem maskinen din kjører og hvilken versjon det er.**
+### **15. Gi en Linux-kommando som finner ut hvilket operativsystem maskinen din kjører og hvilken versjon det er.**
 
 ```bash
 lsb_release -a
@@ -200,7 +200,7 @@ uname -a (??)
 <br>
 <br>
 
-## **16. Finn ut hvilke grupper du selv tilhører på din private s-server (med intel3-innlogging).**
+### **16. Finn ut hvilke grupper du selv tilhører på din private s-server (med intel3-innlogging).**
 ```bash
 groups <username>
 Tilhører <username> og sudo
@@ -210,7 +210,7 @@ Tilhører <username> og sudo
 <br>
 <br>
 
-## **17. Bruk grep på data2500 til å finne alle grupper brukeren haugerud er med i.**
+### **17. Bruk grep på data2500 til å finne alle grupper brukeren haugerud er med i.**
 ```
 cat /etc/group | grep haugerud
 - sudo
@@ -221,7 +221,7 @@ cat /etc/group | grep haugerud
 <br>
 <br>
 
-## **18. (Oblig)  Hva skjer med eierskapet om man kopierer en annens fil? Prøv ved å kopiere en fil fra en annen bruker, for eksempel /home/haugerud/haugerud.txt på serveren data2500.**
+### **18. (Oblig)  Hva skjer med eierskapet om man kopierer en annens fil? Prøv ved å kopiere en fil fra en annen bruker, for eksempel /home/haugerud/haugerud.txt på serveren data2500.**
 
 Den kopierte filen kommer under eierskap av brukeren som kopierte. Dette vil jeg tro skjer fordi vi har leserettighet, og derfor kan lese filen og skriver det i en egen ny fil.
 
@@ -230,7 +230,7 @@ Den kopierte filen kommer under eierskap av brukeren som kopierte. Dette vil jeg
 <br>
 <br>
 
-## **19. Gir skriverettighet leserettighet? Har man automatisk leserettigheter hvis man har skriverettighet? Prøv!**
+### **19. Gir skriverettighet leserettighet? Har man automatisk leserettigheter hvis man har skriverettighet? Prøv!**
 
 Nei, det gir ikke leserettigheter.
 
@@ -240,7 +240,7 @@ Nei, det gir ikke leserettigheter.
 <br>
 
 
-## **20. Kan man slette en fil man selv eier, men ikke har skriverettigheter til?**
+### **20. Kan man slette en fil man selv eier, men ikke har skriverettigheter til?**
 
 Ja, men man får et spørsmål om man vil slette en skrivebeskyttet fil.
 
@@ -249,7 +249,7 @@ Ja, men man får et spørsmål om man vil slette en skrivebeskyttet fil.
 <br>
 <br>
 
-## **21. (Oblig) På din private s-server (med intel3-innlogging), utfør en Linux-kommando som bruker grep til å skrive ut den linjen i /etc/passwd som inneholder ditt brukernavn, uten å bruke ditt brukernavn eksplisitt.**
+### **21. (Oblig) På din private s-server (med intel3-innlogging), utfør en Linux-kommando som bruker grep til å skrive ut den linjen i /etc/passwd som inneholder ditt brukernavn, uten å bruke ditt brukernavn eksplisitt.**
 
 ```bash
 cat /usr/passwd | grep $USER
@@ -260,7 +260,7 @@ cat /usr/passwd | grep $USER
 <br>
 
 
-## **22. (Oblig) Tast inn inn ved shell-promptet de to linjene:**
+### **22. (Oblig) Tast inn inn ved shell-promptet de to linjene:**
 
 ```bash
 minvar=hei
@@ -290,7 +290,7 @@ HALLO
 <br>
 
 
-## **23. (Oblig) Lag et script vari.sh:**
+### **23. (Oblig) Lag et script vari.sh:**
 
 ```bash
 #! /bin/bash 
@@ -329,7 +329,7 @@ vil det fungere. Da kjøres scriptet i samme shell.
 <br>
 <br>
 
-## **24. Start en editor på data2500. Anta at editoren henger av en eller annen grunn. Logg inn på data2500 i et annet vindu og drep editor-prosessen med kommandoen kill. Hint: Du må finne editorens PID med ps.**
+### **24. Start en editor på data2500. Anta at editoren henger av en eller annen grunn. Logg inn på data2500 i et annet vindu og drep editor-prosessen med kommandoen kill. Hint: Du må finne editorens PID med ps.**
 
 Jeg fant prosessen med ps aux fra en annen terminal, og drepte den med kill. <PID> <br>
 Da avsluttet editoren i det andre vinduet med en gang med følgende melding:
@@ -357,7 +357,7 @@ JWindow: 0x557f76e5dbc0, top: 1, rows: 27, buffer: 0x557f76e645b0
 <br>
 <br>
 
-## **25.Bruk uname slik at navnet på OS'et som kjøres legges i variabelen $OS (etterpå skal echo $OS gi Linux).**
+### **25.Bruk uname slik at navnet på OS'et som kjøres legges i variabelen $OS (etterpå skal echo $OS gi Linux).**
 
 ```bash
 s194@os694:~$ export OS="$(uname)"
@@ -369,7 +369,7 @@ Linux
 <br>
 <br>
 
-## **26.Legg til katalogen ~/bin i \$PATH. Legg endringen til i ~/.bashrc for at den skal være varig. Legger du senere scriptene du lager i ~/bin kan de da kjøres fra hvilken som helst katalog. Legg et script i ~/bin og sjekk at det kan kjøres fra hvorsomhelst. Sjekk om "." (katalogen du står i) er med i \$PATH. Hvis ikke må du skrive \$ ./mittscript for å få kjørt et script som heter mittscript. Legg i såfall til "." i PATH og lagre endringen i ~/.bashrc. Da kan du etterpå kjøre scriptet med $ mittscript.**
+### **26.Legg til katalogen ~/bin i \$PATH. Legg endringen til i ~/.bashrc for at den skal være varig. Legger du senere scriptene du lager i ~/bin kan de da kjøres fra hvilken som helst katalog. Legg et script i ~/bin og sjekk at det kan kjøres fra hvorsomhelst. Sjekk om "." (katalogen du står i) er med i \$PATH. Hvis ikke må du skrive \$ ./mittscript for å få kjørt et script som heter mittscript. Legg i såfall til "." i PATH og lagre endringen i ~/.bashrc. Da kan du etterpå kjøre scriptet med $ mittscript.**
 
 ```bash
 PATH=$PATH:~/bin
@@ -379,11 +379,11 @@ PATH=$PATH:~/bin
 <br>
 <br>
 
-## **29.(Oblig) Hvis du leter etter filer med navn passwd på data2500 med følgende kommando**
+### **29.(Oblig) Hvis du leter etter filer med navn passwd på data2500 med følgende kommando**
 ```bash
 data2500:~$ find /  -name "passwd"
 ```
-## **får du en masse linjer med "Permission denied". Lag en kommando som gjør at bare linjer hvor "passwd" blir funnet vises.**
+### **får du en masse linjer med "Permission denied". Lag en kommando som gjør at bare linjer hvor "passwd" blir funnet vises.**
 
 ```bash
 find / -name "passwd" 2>/dev/null
@@ -393,7 +393,7 @@ find / -name "passwd" 2>/dev/null
 <br>
 <br>
 
-## **30. Ukens utfordring nr. 1: Lag et script err.sh som skriver strengen "hallo" til stdout og strengen "Error!" til stdout. Kjør deretter scriptet slik at "hallo" skrives ut mens "Error!" omdirigeres til filen err.txt.**
+### **30. Ukens utfordring nr. 1: Lag et script err.sh som skriver strengen "hallo" til stdout og strengen "Error!" til stdout. Kjør deretter scriptet slik at "hallo" skrives ut mens "Error!" omdirigeres til filen err.txt.**
 
 ```bash
 #! /bin/bash
@@ -406,7 +406,7 @@ echo "Error!" >err.txt
 <br>
 <br>
 
-## **31.Lag en kommando på data2500 som teller antall ganger navnet haugerud forekommer i filen /etc/group og legger tallet i filen hgroup.txt.**
+### **31.Lag en kommando på data2500 som teller antall ganger navnet haugerud forekommer i filen /etc/group og legger tallet i filen hgroup.txt.**
 
 ```bash
 grep -c haugerud /etc/group>haugerud.txt
@@ -416,13 +416,13 @@ grep -c haugerud /etc/group>haugerud.txt
 <br>
 <br>
 
-## **32.Splitt opp følgende eksempel, utfør ledd for ledd (først ps aux, så awk '{print $1}', så ps -eo user | sort, etc.) og forklar hva hver kommando gjør:**
+### **32.Splitt opp følgende eksempel, utfør ledd for ledd (først ps aux, så awk '{print $1}', så ps -eo user | sort, etc.) og forklar hva hver kommando gjør:**
 
 ```bash
 ps aux | awk '{print $1}' | sort | uniq | wc -l**
 ```
 
-## **(Forøvrig er ps -eo user et alternativ til ps aux | awk '{print $1}' ) Kommandoen skal gi antall brukere som kjører prosesser på maskinen, men gir en for mye fordi det står en linje med USER øverst i ps aux listingen. Prøv å fjerne linjen som inneholder USER med grep, les manualsiden for grep.**
+### **(Forøvrig er ps -eo user et alternativ til ps aux | awk '{print $1}' ) Kommandoen skal gi antall brukere som kjører prosesser på maskinen, men gir en for mye fordi det står en linje med USER øverst i ps aux listingen. Prøv å fjerne linjen som inneholder USER med grep, les manualsiden for grep.**
 
 ```bash
 ps aux
@@ -459,7 +459,7 @@ for å fjerne den øverte USER kolonnenavnet. (-v er NOT MATCHING i grep)
 <br>
 <br>
 
-## **33. Ukens utfordring nr. 2: Lag en kommando som teller opp hvor mange ganger strengen "haugerud" finnes tilsammen i filene /etc/passwd og /etc/group på data2500.**
+### **33. Ukens utfordring nr. 2: Lag en kommando som teller opp hvor mange ganger strengen "haugerud" finnes tilsammen i filene /etc/passwd og /etc/group på data2500.**
 
 ```bash
 grep -c 'haugerud' /etc/passwd /etc/group | awk -F: '{s+=$2} END {print s}'
@@ -470,7 +470,7 @@ grep -c 'haugerud' /etc/passwd /etc/group | awk -F: '{s+=$2} END {print s}'
 <br>
 
 
-## **34.(Oblig) Lag et script usrbin.bash:**
+### **34.(Oblig) Lag et script usrbin.bash:**
 ```bash
 #! /bin/bash 
 cd /usr/bin 
@@ -478,7 +478,7 @@ echo "er i $(pwd)"
 som du kjører med
 $ ./usrbin.bash 
 ```
-## **Hvor i filtreet er du etter at scriptet har kjørt? Forklar. Prøv å kjøre scriptet på en slik måte at du befinner deg i /usr/bin etter at det har kjørt.**
+### **Hvor i filtreet er du etter at scriptet har kjørt? Forklar. Prøv å kjøre scriptet på en slik måte at du befinner deg i /usr/bin etter at det har kjørt.**
 
 Vi er på samme sted. For å kunne havne /usr/bin må vi kjøre scriptet i samme shell, enten ved bruk av 'source' eller '.' slik:
 
@@ -491,7 +491,7 @@ Vi er på samme sted. For å kunne havne /usr/bin må vi kjøre scriptet i samme
 <br>
 <br>
 
-## **35. Lag script for å appende fra meminfo til fil**
+### **35. Lag script for å appende fra meminfo til fil**
 
 ```bash
 #! /bin/bash
@@ -503,7 +503,7 @@ cat /proc/meminfo | grep $1 >>$1.dat
 <br>
 <br>
 
-## **36.Ukens utfordring nr. 3:  I en tom katalog med navn ~/tmp utføres følgende Linux-kommandoer:**
+### **36.Ukens utfordring nr. 3:  I en tom katalog med navn ~/tmp utføres følgende Linux-kommandoer:**
 ```bash
 $ mkdir dir1
 $ mkdir dir2
@@ -513,7 +513,7 @@ $ mv dir1 dir2
 $ mv dir3 dir2
 ```
 
-## **Bruk kommandoen tree eller tegn en liten skisse som viser katalogstrukturen under ~/tmp med navn på alle kataloger og filer etter at disse kommandoene er utført.**
+### **Bruk kommandoen tree eller tegn en liten skisse som viser katalogstrukturen under ~/tmp med navn på alle kataloger og filer etter at disse kommandoene er utført.**
 
 ```bash
 s354410@data2500:~/tmp2$ tree
@@ -533,12 +533,12 @@ s354410@data2500:~/tmp2$ tree
 <br>
 <br>
 
-## **37.Ukens utfordring nr. 4: Anta at du er i en katalog med en mengde filer med filendelse .HTM. Lag et script som endrer fil-endelse på alle disse filene til .html. Bruk basename fra oppgaven over til å løse dette problemet. Kommandoen $ basename dir/fil.txt gir fil.txt til resultatet. For å legge resultatet av en kommando inn i en variabel, bruker man apostrofer. Etter**
+### **37.Ukens utfordring nr. 4: Anta at du er i en katalog med en mengde filer med filendelse .HTM. Lag et script som endrer fil-endelse på alle disse filene til .html. Bruk basename fra oppgaven over til å løse dette problemet. Kommandoen $ basename dir/fil.txt gir fil.txt til resultatet. For å legge resultatet av en kommando inn i en variabel, bruker man apostrofer. Etter**
 ```bash
 name=`basename dir/fil.txt`
 ```
 
-## **har variabelen $name verdien fil.txt. Legg merke til at det er forskjell på apostrofene ' og `. Den siste som heller bakover brukes i det siste eksempelet. Alternativt kan man bruke følgende metode:**
+### **har variabelen $name verdien fil.txt. Legg merke til at det er forskjell på apostrofene ' og `. Den siste som heller bakover brukes i det siste eksempelet. Alternativt kan man bruke følgende metode:**
 ```bash
 name=$(basename dir/fil.txt)
 ```

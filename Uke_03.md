@@ -42,7 +42,7 @@ F(A,B) = A
 
 ---
 
-### **8. Let deg frem til den eneste filen som ligger i en mappe på ditt hjemmeoråde. Innholdet er et ord med 10 tegn. Finn dette ordet og skriv det inn i rapporten, ett ord for hvert medlem i gruppen. Skriv inn ordene sammen med s-nummeret det tilhører.**
+## **8. Let deg frem til den eneste filen som ligger i en mappe på ditt hjemmeoråde. Innholdet er et ord med 10 tegn. Finn dette ordet og skriv det inn i rapporten, ett ord for hvert medlem i gruppen. Skriv inn ordene sammen med s-nummeret det tilhører.**
 
 * s354410 - 5cHVO5ZMUV
 * s354542 - klZ1phWjUI

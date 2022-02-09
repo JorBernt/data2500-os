@@ -1,10 +1,10 @@
 # Uke 5
 
-## **1. Kompiler C-programmet Hello world fra forelesningen på data2500 med gcc hello.c og kjør det med**
+### **1. Kompiler C-programmet Hello world fra forelesningen på data2500 med gcc hello.c og kjør det med**
 ```
 $ ./a.out
 ```
-## **Kompiler det så med gcc hello.c -o hello. Hvordan kan du nå også kjøre programmet? Hvis du ikke har programmert i C før, kan denne C-tutorial være nyttig.**
+### **Kompiler det så med gcc hello.c -o hello. Hvordan kan du nå også kjøre programmet? Hvis du ikke har programmert i C før, kan denne C-tutorial være nyttig.**
 
 En kan kjøre den med å skrive 
 
@@ -16,12 +16,12 @@ $ ./hello
 <br>
 <br>
 
-## **2. (Oblig) Kompiler sum.c fra forelesningen sjekk at du får riktig svar. Kompiler så sammen sumMain.c og as.s fra samme forelesning med**
+### **2. (Oblig) Kompiler sum.c fra forelesningen sjekk at du får riktig svar. Kompiler så sammen sumMain.c og as.s fra samme forelesning med**
 
 ```bash
 $ gcc sumMain.c as.s
 ```
-## **Endre så assembly-koden as.s slik at løkken gjennomløpes en gang til og sjekk at du får svaret 10. Hva er likheten mellom koden i as.s og maskinkoden i oppgave 31 i uke 3?**
+### **Endre så assembly-koden as.s slik at løkken gjennomløpes en gang til og sjekk at du får svaret 10. Hva er likheten mellom koden i as.s og maskinkoden i oppgave 31 i uke 3?**
 
 ????? HVAA ???
 
@@ -30,7 +30,7 @@ $ gcc sumMain.c as.s
 <br>
 <br>
 
-## **3.(Oblig) Kopier as.s til en ny fil as2.s og endre assembly-koden slik at den utfører**
+### **3.(Oblig) Kopier as.s til en ny fil as2.s og endre assembly-koden slik at den utfører**
 ```c
 S = 0;
 for(i=1;i < 3;i++)
@@ -38,7 +38,7 @@ for(i=1;i < 3;i++)
    S = S + 2;
 }
 ```
-## **istedet. Lag gjerne en ny versjon av sum.c også slik at du er sikker på at as2.s virker som den skal.**
+### **istedet. Lag gjerne en ny versjon av sum.c også slik at du er sikker på at as2.s virker som den skal.**
 
 ```s
 sum:                 # Standard
@@ -68,7 +68,7 @@ $ Sum = 4
 <br>
 <br>
 
-## **3.Lag en fil esum.c som ser slik ut:**
+### **4.Lag en fil esum.c som ser slik ut:**
 ```c
 int sum()
 {
@@ -80,12 +80,12 @@ for(i=1; i < 4; i++)
 return(S);
 }
 ```
-## **Kompiler den deretter sammen med sumMain.c med.**
+### **Kompiler den deretter sammen med sumMain.c med.**
 ```bash
 gcc sumMain.c esum.c
 ```
 
-## **og kjør programmet. Hva er likheten mellom as.s og esum.c? Kompiler så esum.c med**
+### **og kjør programmet. Hva er likheten mellom as.s og esum.c? Kompiler så esum.c med**
 ```bash
 gcc -S esum.c
 ```
@@ -125,7 +125,7 @@ Likhet kan være at de er strukturert likt, de definerer og initialiserer variab
 <br>
 <br>
 
-## **Hva er likeheten mellom as.s og den resulterende filen esum.s med tanke på hva de totalt sett utfører? Klarer du å se noen likheter mellom koden i esum.s og as.s? Endre koden i esum.s slik at løkken går en gang til.**
+### **Hva er likeheten mellom as.s og den resulterende filen esum.s med tanke på hva de totalt sett utfører? Klarer du å se noen likheter mellom koden i esum.s og as.s? Endre koden i esum.s slik at løkken går en gang til.**
 
 ```
 .LFB0:
@@ -160,7 +160,7 @@ $ Sum = 10
 <br>
 <br>
 
-## **5. Ukens utfordring nr. 1: Programmer inn en linje maskinkode i sum-programmet som ligger i DigitalWorks slik at resultatet av summen som ligger i R3 skrives til adresse 3 i RAM. Sjekk etterpå at resultatet ble lagret rett sted ved å gå inn i RAM-modulen og se. Du kan finne rikgig instruksjon i avsnittet 3.10 Løkker og branch control. Ville det være mulig å skrive til adresse 2 og 12 bare ved hjelp av de eksistrende instruksjonene?**
+### **5. Ukens utfordring nr. 1: Programmer inn en linje maskinkode i sum-programmet som ligger i DigitalWorks slik at resultatet av summen som ligger i R3 skrives til adresse 3 i RAM. Sjekk etterpå at resultatet ble lagret rett sted ved å gå inn i RAM-modulen og se. Du kan finne rikgig instruksjon i avsnittet 3.10 Løkker og branch control. Ville det være mulig å skrive til adresse 2 og 12 bare ved hjelp av de eksistrende instruksjonene?**
 
 For å lagre i ram bruker vi store opcode (1010). Store leser av en verdi fra DR, og bruker denne til å velge hvilken adresse i ram den skal skrive til.
 For å skrive i adresse 3, kan vi lese av register 0 som er 3.
@@ -171,7 +171,7 @@ Linjen er slik: 10100011
 <br>
 <br>
 
-## **6. (Oblig)Skriv et shell-script som skriver ut verdien av den globale variabelen SHELL hvis den er satt og gir melding om at den er udefinert hvis den ikke er satt.**
+### **6. (Oblig)Skriv et shell-script som skriver ut verdien av den globale variabelen SHELL hvis den er satt og gir melding om at den er udefinert hvis den ikke er satt.**
 
 ```bash
 #! /bin/bash
@@ -197,7 +197,7 @@ Variabelen er udefinert
 <br>
 <br>
 
-## **7. (Oblig) Lag et bash-script med navn publiser som setter rettighetene til alle filer i ~/www slik at eier kun kan lese og skrive, mens alle andre kun kan lese dem. I tillegg skal scriptet gi tilsvarende rettigheter for alle filer i ~/www/bilder. Hvis mappene ~/www og ~/www/bilder ikke eksisterer, skal de opprettes og gis alle rettigheter for eier, men kun lese- og kjørerettigheter for alle andre. Om det finnes andre kataloger i ~/www skal disse ikke endre rettigheter, heller ikke underkataloger og filer i disse.**
+### **7. (Oblig) Lag et bash-script med navn publiser som setter rettighetene til alle filer i ~/www slik at eier kun kan lese og skrive, mens alle andre kun kan lese dem. I tillegg skal scriptet gi tilsvarende rettigheter for alle filer i ~/www/bilder. Hvis mappene ~/www og ~/www/bilder ikke eksisterer, skal de opprettes og gis alle rettigheter for eier, men kun lese- og kjørerettigheter for alle andre. Om det finnes andre kataloger i ~/www skal disse ikke endre rettigheter, heller ikke underkataloger og filer i disse.**
 
 ```bash
 #! /bin/bash
@@ -227,7 +227,7 @@ perm ~/www/bilder
 <br>
 <br>
 
-## **8. (Oblig) Lag et bash-script count.bash som skriver ut en oversikt over hvor mange linker, filer og kataloger det finnes i katalogen scriptet kjøres fra og i alle dens underkataloger. Bruker du doble parenteser rundt aritmetiske uttrykk (( x++ )) kan du bruke samme syntaks som i Java (og sløyfe $ foran variabelnavn). Hint: Test kommandoene ls -R, tree -if og find . og se om noen av dem kan brukes i scriptet.**
+### **8. (Oblig) Lag et bash-script count.bash som skriver ut en oversikt over hvor mange linker, filer og kataloger det finnes i katalogen scriptet kjøres fra og i alle dens underkataloger. Bruker du doble parenteser rundt aritmetiske uttrykk (( x++ )) kan du bruke samme syntaks som i Java (og sløyfe $ foran variabelnavn). Hint: Test kommandoene ls -R, tree -if og find . og se om noen av dem kan brukes i scriptet.**
 
 ```bash
 #! /bin/bash
@@ -261,7 +261,7 @@ echo Antall linker: $linker
 <br>
 <br>
 
-## **9. Ukens utfordring nr. 2: Lag en versjon av scriptet i spørsmål 5.7 som antar at ~/www eksisterer og gir**
+### **9. Ukens utfordring nr. 2: Lag en versjon av scriptet i spørsmål 5.7 som antar at ~/www eksisterer og gir**
 1. **alle rettigheter for eier, men kun lese- og kjørerettigheter for alle andre for ~/www og alle undermapper**
 2. **lese og skriverettigheter for eier, men kun leserettigheter for alle andre for alle filer i ~/www og dens undermapper**
 
@@ -286,7 +286,7 @@ done
 <br>
 <br>
 
-## **10. Ukens utfordring nr. 3: Lag en versjon av scriptet i forrige spørsmål som gir rettigheter som spesifisert der, uavhengig av hvilke rettigheter de hadde fra før.**
+### **10. Ukens utfordring nr. 3: Lag en versjon av scriptet i forrige spørsmål som gir rettigheter som spesifisert der, uavhengig av hvilke rettigheter de hadde fra før.**
 
 ```bash
 #! /bin/bash
@@ -307,7 +307,7 @@ done
 <br>
 <br>
 
-## **11. (Oblig) Skriv et shell-script som tar en streng som argument og skriver ut en melding som avgjør om dette er en fil og om i såfall den er angitt med absolutt eller relativ path (om en relativ path er angitt til filen, skal scriptet sjekke om den finnes relativt til der scriptet kjøres fra. Merk: hvis man gjør en test på en fil i et script, utføres testen fra den mappen som scriptet starter i.). (hint: Testen if [ -f $fil ] ; then slår til om $fil er en fil. Bruk konstruksjonen \${variabel:offset:length} for å trekke ut ett tegn fra en streng. Eventuelt cut -c 1.)**
+### **11. (Oblig) Skriv et shell-script som tar en streng som argument og skriver ut en melding som avgjør om dette er en fil og om i såfall den er angitt med absolutt eller relativ path (om en relativ path er angitt til filen, skal scriptet sjekke om den finnes relativt til der scriptet kjøres fra. Merk: hvis man gjør en test på en fil i et script, utføres testen fra den mappen som scriptet starter i.). (hint: Testen if [ -f $fil ] ; then slår til om $fil er en fil. Bruk konstruksjonen \${variabel:offset:length} for å trekke ut ett tegn fra en streng. Eventuelt cut -c 1.)**
 
 
 ```bash
@@ -325,7 +325,7 @@ fi
 <br>
 <br>
 
-## **12. (Oblig) Utvid scriptet i forrige oppgave slik at brukeren kan angi flere enn en fil. Gjør det ved å gå igjennom argumentene ett for ett og utføre det samme for hvert argument.**
+### **12. (Oblig) Utvid scriptet i forrige oppgave slik at brukeren kan angi flere enn en fil. Gjør det ved å gå igjennom argumentene ett for ett og utføre det samme for hvert argument.**
 
 ```bash
 #! /bin/bash
@@ -352,7 +352,7 @@ finnesikke! er ikke en fil
 <br>
 <br>
 
-## **13. Skriv et bash-script rename som endrer filendelse på filer i katalogen det kjøres. Brukeren angir en filendelse og hva den skal endres til med to argumenter. Hvis man bruker rename som følger:**
+### **13. Skriv et bash-script rename som endrer filendelse på filer i katalogen det kjøres. Brukeren angir en filendelse og hva den skal endres til med to argumenter. Hvis man bruker rename som følger:**
 
 ```
 $ ./rename wav mp3
@@ -360,7 +360,7 @@ Endrer fil.wav til fil.mp3
 Endrer fil2.wav til fil2.mp3
 ```
 
-## **skal alle filer i katalogen som har filendelse wav endres til mp3. En opplysning om hver endring skal gis som i eksempelet. Hvis brukeren ikke angir to argumenter skal scriptet avslutte og oppgi riktig syntaks. Hvis det ikke finnes filer med den filendelsen brukeren angir som første argument, skal scriptet gi en melding om det.**
+### **skal alle filer i katalogen som har filendelse wav endres til mp3. En opplysning om hver endring skal gis som i eksempelet. Hvis brukeren ikke angir to argumenter skal scriptet avslutte og oppgi riktig syntaks. Hvis det ikke finnes filer med den filendelsen brukeren angir som første argument, skal scriptet gi en melding om det.**
 
 
 ```bash
@@ -387,11 +387,11 @@ done
 <br>
 
 
-## **15. (Oblig) Lag et bash-script "finnOrd" som tar ett ord som argument og går igjennom alle filer i katalogen scriptet blir utført fra og i alle underkataloger, og finner linjer i disse filene som inneholder dette ordet. For hver fil som inneholder ordet, skal scriptet gi meldingen:**
+### **15. (Oblig) Lag et bash-script "finnOrd" som tar ett ord som argument og går igjennom alle filer i katalogen scriptet blir utført fra og i alle underkataloger, og finner linjer i disse filene som inneholder dette ordet. For hver fil som inneholder ordet, skal scriptet gi meldingen:**
 ```
 ########### Fant "ord" i fil "filnavn" i følgende linje(r):
 ```
-## **Og så skrive ut alle linjene (Hint: bruk find . og grep).**
+### **Og så skrive ut alle linjene (Hint: bruk find . og grep).**
 
 ```bash
 #! /bin/bash
@@ -417,7 +417,11 @@ Hei
 Hei
 ```
 
-## **16. Lag et shellscript som når det kjøres på data2500 gir omtrent tilsvarende som output:**
+---
+<br>
+<br>
+
+### **16. Lag et shellscript som når det kjøres på data2500 gir omtrent tilsvarende som output:**
 
 ```
 Linux data2500 4.4.0-101-generic #124-Ubuntu SMP Fri Nov 10 18:29:59 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
@@ -429,7 +433,7 @@ model name	: Common KVM processor
 /etc/os-release:UBUNTU_CODENAME=xenial
 /etc/lsb-release:DISTRIB_DESCRIPTION="Ubuntu 16.04.3 LTS"
 ```
-## **Hint: Test ut kommandoen uname og se på innholdet i /proc/meminfo, /proc/cpuinfo og /etc/\*release.**
+### **Hint: Test ut kommandoen uname og se på innholdet i /proc/meminfo, /proc/cpuinfo og /etc/\*release.**
 
 ```bash
 #! /bin/bash
