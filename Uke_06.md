@@ -368,4 +368,31 @@ total 816
 <br>
 <br>
 
-### **11.
+### **12.Lag et bash-script som skriver ut en oversikt tilsvarende den som er gitt nedenfor. All informasjon skal genereres dynamisk av scriptet og vil dermed avhenge av hvem som kjører det, hva scriptet heter, hvor det kjøres etc. Bruk scriptet fra forrige uke som teller filer og linker i dette scriptet (Hint: finn ut hva shell-variablene $0 og $$ er).**
+
+```bash
+#! /bin/bash
+
+user=$(whoami)
+script=$(basename $0)
+os=$(uname)
+pid=$(ps aux | grep $script | head -1 | awk '{print $2}')
+directories=$(find ~/ -type d -not -path '*/.*' | wc -l)
+files=$(find ~/ -type f -not -path '*/.*' | wc -l)
+links=$(find ~/ -type l -not -path '*/.*' | wc -l)
+currentDir=$(pwd)
+usersInPasswd=$(cat /etc/passwd | wc -l)
+groups=$(cat /etc/group | wc -l)
+
+echo Du har brukernavn $user og kjører scriptet $script med PID = $pid 
+echo på maskinen $(hostname) som kjører operativsystemet $os
+echo oversikt over din hjemmekatalog $HOME:
+echo Filer: $files
+echo Kataloger: $directories
+echo Linker: $links
+echo Ditt default shell er $SHELL og du befinner deg i 
+echo katalogen $currentDir
+echo Totalt $usersInPasswd brukere er oppført i passordfilen og det er definert $groups grupper
+echo Oversikt over dine grupper:
+echo $(groups $user)
+```
