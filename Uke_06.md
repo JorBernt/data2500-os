@@ -384,7 +384,7 @@ currentDir=$(pwd)
 usersInPasswd=$(cat /etc/passwd | wc -l)
 groups=$(cat /etc/group | wc -l)
 
-echo Du har brukernavn $user og kjører scriptet $script med PID = $pid 
+echo Du har brukernavn $user og kjører scriptet ./$script med PID = $pid 
 echo på maskinen $(hostname) som kjører operativsystemet $os
 echo oversikt over din hjemmekatalog $HOME:
 echo Filer: $files
@@ -395,4 +395,77 @@ echo katalogen $currentDir
 echo Totalt $usersInPasswd brukere er oppført i passordfilen og det er definert $groups grupper
 echo Oversikt over dine grupper:
 echo $(groups $user)
+```
+---
+<br>
+<br>
+
+### **13.Ukens nøtt nr. 1: Lag et script som på data2500 leser de 5 første linjene av /etc/hosts og lager to array, ip og navn, som etter at scriptet er kjørt inneholder de 5 første IP-adressene og de fem første navnene i denne filen. Til slutt skal scriptet skrive ut lengden av arrayene og hva som ligger i tredje element i de to arrayene. Når det kjøres skal output se slik ut:**
+```
+    $ ./arr.sh
+Totalt: 5
+Array 3: 128.39.89.23 nexus.cs.hioa.no
+```
+Script:
+```bash
+#! /bin/bash
+i=0
+while read p
+do
+   (( i++ ))
+   ip[$i]=$p
+done < <(cat /etc/hosts | head -5 | awk '{print $1}')
+i=0
+while read n
+do
+   ((i++))
+   names[$i]=$n
+done < <(cat /etc/hosts | head -5 | awk '{print $2}')
+
+echo Totalt: ${#names[@]}
+echo Array 3: ${ip[2]} ${names[2]}
+```
+
+---
+
+<br>
+<br>
+
+### **14. Lag et script som på data2500 leser de 5 første linjene av /etc/hosts og lager et assosiativt array, ip, som etter at scriptet er kjørt inneholder de 5 første IP-adressene og har de fem første navnene i denne filen som indeks i arrayet. Til slutt skal scriptet skrive ut lengden av arrayet og de fem elementene omtrent slik(rekkefølgen er ikke vesentlig):**
+
+```bash
+#! /bin/bash
+
+declare -A arr
+while read p; do
+        ip=$(echo $p | awk '{print $1}')
+        name=$(echo $p | awk '{print $2}')
+        arr["$ip"]=$name
+done < <(cat /etc/hosts | head -5)
+
+for f in "${!arr[@]}"; do
+        echo ${arr[$f]} sin IP er $f
+done
+```
+
+---
+
+<br>
+<br>
+
+### **15.Ta utgangspunkt i denne syslog-filen og lag et script som gir en sortert liste over for hvilke tidspunkt(hvilket sekund) det var flest events, basert på timestamp i kolonne nr 3.**
+
+```bash
+#! /bin/bash
+
+declare -A log
+
+while read p; do
+        time=$(echo $p | awk '{print $3}')
+        ((log[$time]++))
+done < syslog.tmp
+
+for k in "${!log[@]}"; do
+        echo $k " - " ${log[$k]}
+done | sort -rn -k3 | head -5
 ```
