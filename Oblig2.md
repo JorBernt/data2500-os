@@ -861,5 +861,5 @@ root@os20:/home/group20# docker container exec f33a256aec01 /bin/bash -c "echo c
 
     s108 - nIXYMfQts3
     s253 - Wcz3qJ1Knu
-
+    s15 - csnu5N2wTH
     s194 - Har levert på nettsiden men får ikke til å kjøre docker container nå.
