@@ -90,10 +90,11 @@ Bare de 4 første får ~100% cpu, siden serveren har kun 4 cpuer.
 
 ### **5.Se igjen på top. Tast 1 mens top kjører. Hvor mange CPU'er har data2500? Hvor mange prosent CPU får hver prosess? Hvordan fordeles de to regne-jobbene på CPUer?**
 
+Begge får 100%, og de fordeles over begge to.
 
 ### **Start så fem prosesser i en for-løkke slik at de alle samtidig kjører ./a.out &. Hvordan fordeles CPUene mellom de 5 regne-jobbene? Tast f som gir mulighet til å se flere kolonner, flytt så pekeren ned til kolonnen "Last used CPU" med piltatsten og tast space og deretter q for å komme tilbake til top. Prøv å se hvilke CPUer dine 5 prosesser jobber på og prøv å forklare hvordan OS fordeler jobbene på CPU'ene.**
 
-
+De fordeles over alle CPU'ene. Det ser ut til at prosessene blir delt opp i veldig små deler, og CPU'en som er først tilgjengelig tar seg av neste bit. 
 ---
 <br>
 <br>
