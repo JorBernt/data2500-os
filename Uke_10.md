@@ -18,7 +18,10 @@
 
 ### **10.4 Linux-kjernen konfigurerer vanligvis hardware-timeren til å sende et interrupt hvert hundredels sekund. Forklar kort hvorfor dette timer-interruptet er nødvendig for at Linux-kjernen skal kunne fordele CPU-tid mellom alle prosessene uten at en av disse prosessene kan ta over styringen.**
 
-    Hver prosess får tildelt et time-quantum som måles i helt antall jiffies.
-    Får hver tick 
+    Hver prosess får tildelt et time-quantum som måles i helt antall jiffies, og lagres i en counter.
+    Får hver tick minker counter med 1, og når en prosess ikke har flere igjen, kalles schedule() og en ny prosess velges. 
+    Ticksene styres av hardware-timeren, siden det ville blitt for mye systemoverhaed om OS skulle styrt dette selv.
+
+
 
 
