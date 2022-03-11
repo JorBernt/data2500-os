@@ -808,7 +808,7 @@ root@c48e742e40da:/#
 ---
 
 
-### **6.Start et ubuntu-container og inkluder -p 8081:80, slik at man kan koble til en webserver på port 8081 på Linux-VM. Gå inn i containeren på kommandolinjen og installer apache2 webserver og få den til å kjøre. Prøv også å få webserveren til å starte og å endre innholdet på webserveren fra kommandolinjen på Linux-VM. Sjekk at du kan se webserveren på**
+### **9.6.Start et ubuntu-container og inkluder -p 8081:80, slik at man kan koble til en webserver på port 8081 på Linux-VM. Gå inn i containeren på kommandolinjen og installer apache2 webserver og få den til å kjøre. Prøv også å få webserveren til å starte og å endre innholdet på webserveren fra kommandolinjen på Linux-VM. Sjekk at du kan se webserveren på**
 
     http://os100.vlab.cs.hioa.no:8081/
   
