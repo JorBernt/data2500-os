@@ -22,6 +22,4 @@
     Får hver tick minker counter med 1, og når en prosess ikke har flere igjen, kalles schedule() og en ny prosess velges. 
     Ticksene styres av hardware-timeren, siden det ville blitt for mye systemoverhaed om OS skulle styrt dette selv.
 
-
-
-
+### **10.6.Problem 1.15 i Tanenbaum: Hva er den viktigste forskjellen mellom en trap og et interrupt? (I videoen som demonstrerer multitasking av forelesning og vaffelrørelaging : forskjellen på når vaffelprosessen ønsket å knuse et egg og på avbruddene fra timeren og fra melkemannen når melken leveres)**
