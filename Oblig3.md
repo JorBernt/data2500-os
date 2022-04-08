@@ -233,7 +233,7 @@ else
 }
 ```
 ### **Vær oppmerksom på at etter fork()-kallet er det to uavhengige prosesser som kjører den samme koden! Eneste forskjell er at variabelen pid er forskjellig.**
-### **Modifiser denne koden og lag et C-program som ved hjelp av fork() lager en child-prosess. Denne prosessen skal skrive ut sin egen og parent-prosessen sin PID, sove i 5 sekunder (sleep(5);) og deretter ved hjelp av fork() lage en ny child-prosess. Denne prosessen blir "grandchild" av den opprinnelige prosessen. Grandchild-prosessen skal skrive ut sin egen og parent-prosessen sin PID, sove i 5 sekunder og deretter avslutte. Alle prosesser skal vente på sine children og si ifra når de avslutter.**
+### **Modifiser denne koden og lag et C-program som ved hjelp av fork() lager en child-prosess. Denne prosessen skal skrive ut sin egen og parent-prosessen sin PID, sove i 5 sekunder ( sleep(5); ) og deretter ved hjelp av fork() lage en ny child-prosess. Denne prosessen blir "grandchild" av den opprinnelige prosessen. Grandchild-prosessen skal skrive ut sin egen og parent-prosessen sin PID, sove i 5 sekunder og deretter avslutte. Alle prosesser skal vente på sine children og si ifra når de avslutter.**
 
 ### **Kanskje noe sånt?**
 
@@ -975,6 +975,17 @@ class NosynchThread extends Thread
     haugerud@data2500:~/lock$ taskset -c 0 ./a.out 
 
 ### **Hvorfor får du nå alltid samme resultat selvom det er to uavhengige tråder som kjører?**
+    Om vi hadde f.eks hadde kodet følgende i C:
+
+    for (int i = 0; i < 1000000000; i++)
+    {
+        svar++;
+    }
+
+    ville det laget flere instruksjoner i assembly, hvor tråden kunne blitt satt på pause hvor som helst. Da kunne tråd nr 2 endret på svar variabelen før tråd 1 er ferdig.
+    Siden assembly instruksjon som kalles fra metoden bare er en instruks, kan ikke tråden
+    stoppes mitt i instruksjon som det ville gjort om vi hadde kodet det i C.
+
 ### **Gjenta kjøringen ved å istedet bruke en.c på følgende måte:**
 
     haugerud@data2500:~/lock$ gcc -pthread thread.c en.c 
@@ -982,11 +993,23 @@ class NosynchThread extends Thread
 ### **Kanskje må du kjøre den flere ganger for å se effekten, men hvorfor får du nå noen ganger forskjellig resultat? Kan det ha noe å gjøre med at kompilatoren kan lage flere linjer maskinkode av en linje høynivå-kode? Kompiler en.c på følgende måte:**
     haugerud@data2500:~/lock$ gcc -c -S en.c
 ### **Se så på den resulterende filen en.s og avgjør om flere linjer maskinkode kan være årsaken.**
+
+```s
+        movl    svar(%rip), %eax 
+        addl    $1, %eax
+        movl    %eax, svar(%rip)
+
+```
+    Denne biten fra en.s viser at det lages 3 instruksjon for å inkrementere svar (svar++).
+
 ### **Kompiler og kjør til slutt på følgende måte:**
 
     haugerud@data2500:~/lock$ gcc -O -pthread thread.c en.c 
     haugerud@data2500:~/lock$ taskset -c 0 ./a.out 
 ### **Hvorfor blir resultatet nå alltid det samme?
+    Det er fordi med -O opsjonen optimaliserer gcc koden, det vil si den prøver å lage færre instruksjoner. Om vi ser på assembly koden for en.c nå, er det bare denne instruksjonen som brukes for å inkrementere svar
+
+    addl    $1, svar(%rip)
 
 ---
 <br>
