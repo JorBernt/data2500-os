@@ -164,19 +164,59 @@ Release_Mutex(lock);
     Release_Mutex(tid)
 
     vil tråd første gang tråd nummer 0 få tilgang til koden først, fordi tråd 1 vil bli låst fast i while loopen i Get_Mutex.
+    Når tråd 0 er ferdig, vil den låse opp tråd 1 igjen ved å sette turn til 1.
+
+    Problemet er at om tråd 0 er den som kommer til et kritisk avsnitt først, så blir den satt i lås i while løkken. Da må den vente på den andre tråden til å nå den samme kodebiten, gjøre det ferdig og låse opp den andre tråden igjen. Peterson algoritmen bruker også en while løkke, men har løst problemet med at de må vente på hverandre.
 
 ## Oppgave 5a
 
+    I PowerShell sendes hele objekter med metoder og egenskaper
+
 ## Oppgave 5b
+
+    (ls dok.pdf).Name
 
 ## Oppgave 5c
 
+    StopProcess - kill
+    MoveItem - mv
+    WriteOutput - echo 
+    GetProcess - ps
+    GetLocation - pwd
+    GetChildItem - ls
+    CopyItem - cp
+    GetContent - cat
+
 ## Oppgave 5d
+
+```powershell
+foreach($fil in ls) {
+        if($fil.Extension -ne '.pdf') {
+                continue
+        } 
+        $year="Y"+$fil.creationTime.Year
+        $month="M"+$fil.creationTime.Month
+        $name=$fil.Name
+        if(!(Test-Path -Path ./$year)) {
+                mkdir $year
+        }
+        if(!(Test-Path -Path ./$year/$month)) {
+                mkdir $year/$month
+        }
+        cp $name ./$year/$month/$name
+}
+```
 
 ## Oppgave 6a
 
+    At det tar like lang tid å hente en byte fra hvor som helst i minnet
+
 ## Oppgave 6b
 
+    Ja, det kan ha noe å si hvilken cache register de legges i. Det er L1 cache som er nærmest, og L2 som er lengre unna. 
+
 ## Oppgave 6c
+
+
 
 ## Oppgave 6d
