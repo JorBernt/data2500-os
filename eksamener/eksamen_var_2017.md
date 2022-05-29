@@ -222,3 +222,49 @@ for fil in *.$1; do
     mv $fil $(basename $fil $1)$2;
 done;
 ```
+
+## Oppgave 1a
+
+## Oppgave 1b
+
+## Oppgave 1c
+
+## Oppgave 1d
+
+## Oppgave 2
+
+## Oppgave 3a
+
+## Oppgave 3b
+
+## Oppgave 3c
+
+## Oppgave 3d
+
+## Oppgave 3e
+
+## Oppgave 3f
+
+## Oppgave 3g
+
+## Oppgave 3h
+
+## Oppgave 3i
+
+## Oppgave 3j
+
+## Oppgave 4a
+
+## Oppgave 4b
+
+## Oppgave 4c
+
+## Oppgave 4d
+
+## Oppgave 4e
+
+## Oppgave 4f
+
+## Oppgave 5a
+
+## Oppgave 5b
